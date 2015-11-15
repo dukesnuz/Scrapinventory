@@ -1,0 +1,31 @@
+<?php
+echo '<h2>Companies that specialize in '. htmlspecialchars($row['commodity']).'</h2>';
+	
+	
+echo	'<div class="container">';
+
+	
+				
+				if(mysqli_num_rows($r) >0)
+					{
+						while($row = mysqli_fetch_array($r, MYSQLI_ASSOC))
+							{
+	echo '<div class="list-group">';			
+							$company = str_replace(' ', '', $row['company']);
+
+			                 echo "<a><a href='company_detail.php?id=$row[company_id]&name=$company' class='list-group-item'>$company</a>";
+                         
+
+echo 	'</div>';							
+						   }//END while loop	
+						
+							
+					}else{
+						//no pages availble
+					
+						echo "<h4 class='alert'>There are no listings for $row[commodity] commodities. Please try another commodity or check back later.</h4>";
+			
+							
+					}
+	echo '</div>';	
+?>

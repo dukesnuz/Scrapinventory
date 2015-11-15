@@ -1,0 +1,51 @@
+
+
+
+<section>
+	<header>
+		<h1><?php echo SITE_NAME ?></h1>
+	</header>
+	<p>
+	<?php// echo SITE_NAME?> is a site that contains companies that recycle, resell and reuse commodities.
+	We have 2 types of reigistration plans. </p>
+	<ol>
+		<li>
+			<?php
+				if( !isset($_SESSION['uid'])  && !isset($_SESSION['cid']) )
+					{
+						echo '<a href="register_user.php">User registration:</a>';
+					}else{
+						echo 'User registration:';
+					}
+				?>	
+						  Allows you to view company names listed here.  Cost is Free.</li>
+		    
+		<li>Company reistration: Allows you to list your company here. Also you can view companies listed along  
+			with viewing detailed information on each company. Your compnay will also be listed and details will 
+			be viewable. Cost is $84 per year.</li>
+	</ol>
+</section>	
+
+<section style="margin-left:5%;margin-top:20%;text-align: center">
+	<header>
+		<h2>Recycle | Reclaim | Reuse</h2>
+		<h3>Let's keep it Green</h3>
+	</header>
+	<ul style="float:left;list-style:none">
+		<li><img src="./images/palm_tree.jpg" alt ='Palm Tree'></li>
+		<li><img src="./images/recycling-symbol.png" alt ='Recycle Symbol'></li>
+	</ul>
+	
+   <ul style="float:left;list-style:none">
+		<li><img src="./images/bottles.jpg" alt ='Plastic Glass Bottles'></li>
+		<li><img src="./images/cans.jpg" alt ='Aluminium Cans'></li>
+		<li><img src="./images/bottles.jpg" alt ='Glass Plastic Bottles'></li>
+    </ul>
+    
+    <ul style="float:left;list-style:none">
+		<li><img src="./images/pallet_bale.jpg" alt ='Plasic Pallet Baled Clothes'></li>
+		<li><img src="./images/clothes.JPG" alt ='Used Clotes Vintage Clothing'></li>
+		<li><img src="./images/red_shoes.jpg" alt ='Used Shoes'></li>
+	   </ul>
+	   
+</sectioon>

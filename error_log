@@ -1,0 +1,59 @@
+[07-Nov-2015 16:42:39 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/loadedandrollin1/public_html/scrapinventory.net/register_user.php on line 183
+[07-Nov-2015 17:29:04 UTC] PHP Fatal error:  Call to undefined function escape_data() in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 19
+[08-Nov-2015 00:02:00 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/loadedandrollin1/public_html/scrapinventory.net/company_detail.php on line 86
+[08-Nov-2015 00:02:01 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/loadedandrollin1/public_html/scrapinventory.net/company_detail.php on line 86
+[08-Nov-2015 00:02:50 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/loadedandrollin1/public_html/scrapinventory.net/company_detail.php on line 88
+[08-Nov-2015 00:03:24 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/loadedandrollin1/public_html/scrapinventory.net/company_detail.php on line 88
+[08-Nov-2015 00:03:25 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/loadedandrollin1/public_html/scrapinventory.net/company_detail.php on line 88
+[08-Nov-2015 00:03:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/loadedandrollin1/public_html/scrapinventory.net/company_detail.php on line 88
+[08-Nov-2015 02:31:48 UTC] PHP Fatal error:  Call to undefined function escape_data() in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 19
+[08-Nov-2015 16:01:09 UTC] PHP Fatal error:  Call to undefined function escape_data() in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 19
+[08-Nov-2015 16:01:39 UTC] PHP Fatal error:  Call to undefined function escape_data() in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 19
+[08-Nov-2015 16:02:26 UTC] PHP Fatal error:  Call to undefined function uniq() in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 33
+[08-Nov-2015 16:04:01 UTC] PHP Fatal error:  Call to undefined function uniq() in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 33
+[08-Nov-2015 16:04:18 UTC] PHP Fatal error:  Call to undefined function uniq() in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 33
+[08-Nov-2015 21:36:38 UTC] PHP Fatal error:  Call to undefined function uniq() in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 33
+[08-Nov-2015 21:39:00 UTC] PHP Fatal error:  Call to undefined function uniq() in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 35
+[08-Nov-2015 21:40:21 UTC] PHP Fatal error:  Call to undefined function uniq() in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 35
+[08-Nov-2015 21:43:24 UTC] PHP Fatal error:  Call to undefined function uniq() in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 35
+[08-Nov-2015 21:44:50 UTC] PHP Fatal error:  Call to undefined function uniq() in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 36
+[08-Nov-2015 22:14:21 UTC] PHP Parse error:  syntax error, unexpected ']' in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 21
+[08-Nov-2015 22:15:46 UTC] PHP Fatal error:  Call to undefined function escape_data() in /home/loadedandrollin1/public_html/scrapinventory.net/forgot_password.php on line 21
+[08-Nov-2015 23:19:56 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 47
+[08-Nov-2015 23:21:43 UTC] PHP Parse error:  syntax error, unexpected '$_SESSION' (T_VARIABLE), expecting '(' in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 52
+[08-Nov-2015 23:21:44 UTC] PHP Parse error:  syntax error, unexpected '$_SESSION' (T_VARIABLE), expecting '(' in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 52
+[08-Nov-2015 23:25:24 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 91
+[08-Nov-2015 23:25:28 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 91
+[08-Nov-2015 23:32:34 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 91
+[08-Nov-2015 23:32:35 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 91
+[08-Nov-2015 23:38:06 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 29
+[08-Nov-2015 23:38:08 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 29
+[08-Nov-2015 23:44:54 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 92
+[08-Nov-2015 23:45:38 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 30
+[08-Nov-2015 23:46:12 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 92
+[08-Nov-2015 23:46:55 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 30
+[08-Nov-2015 23:46:56 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 30
+[08-Nov-2015 23:49:42 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 30
+[09-Nov-2015 00:02:06 UTC] PHP Fatal error:  Call to undefined function sessioon_regenerate_id() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 39
+[09-Nov-2015 00:07:54 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 35
+[09-Nov-2015 00:08:06 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 35
+[09-Nov-2015 00:08:18 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 35
+[09-Nov-2015 00:08:20 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 35
+[09-Nov-2015 00:08:21 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 35
+[09-Nov-2015 00:08:42 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 35
+[09-Nov-2015 00:08:44 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 35
+[09-Nov-2015 00:09:16 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 31
+[09-Nov-2015 00:09:17 UTC] PHP Fatal error:  Call to undefined function mysqli_stmt_store_results() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 31
+[09-Nov-2015 00:11:28 UTC] PHP Fatal error:  Call to undefined function sessioon_regenerate_id() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 39
+[09-Nov-2015 00:11:53 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 95
+[09-Nov-2015 00:12:21 UTC] PHP Fatal error:  Call to undefined function sessioon_regenerate_id() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 39
+[09-Nov-2015 00:12:38 UTC] PHP Fatal error:  Call to undefined function sessioon_regenerate_id() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 39
+[09-Nov-2015 00:13:05 UTC] PHP Fatal error:  Call to undefined function sessioon_regenerate_id() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 39
+[09-Nov-2015 00:13:06 UTC] PHP Fatal error:  Call to undefined function sessioon_regenerate_id() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 39
+[09-Nov-2015 00:13:51 UTC] PHP Fatal error:  Call to undefined function sessioon_regenerate_id() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 39
+[09-Nov-2015 00:15:09 UTC] PHP Fatal error:  Call to undefined function sessioon_regenerate_id() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 39
+[09-Nov-2015 00:15:10 UTC] PHP Fatal error:  Call to undefined function sessioon_regenerate_id() in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 39
+[09-Nov-2015 00:35:15 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 105
+[09-Nov-2015 00:35:17 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/loadedandrollin1/public_html/scrapinventory.net/reset.php on line 105
+[09-Nov-2015 13:06:32 UTC] PHP Parse error:  syntax error, unexpected 'web_site' (T_STRING), expecting ',' or ';' in /home/loadedandrollin1/public_html/scrapinventory.net/views/company_detail.inc.html on line 16
+[09-Nov-2015 13:06:45 UTC] PHP Parse error:  syntax error, unexpected 'web_site' (T_STRING), expecting ',' or ';' in /home/loadedandrollin1/public_html/scrapinventory.net/views/company_detail.inc.html on line 16
