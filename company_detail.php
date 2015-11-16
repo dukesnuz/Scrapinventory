@@ -9,6 +9,8 @@ require(MYSQL);
 //also add if subscriber paid
 //$_SESSION['uid'] = 1;
 //$_SESSION['cid'] = 1;
+//$_SESSION['username'] = 'username';
+//$_SESSION['user_not_expired'] = true;
 
 if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset($_SESSION['cid']) && isset($_SESSION['uid']))
 //if(4>2)
@@ -71,7 +73,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
     	if(isset($_SESSION['uid']) && isset($_SESSION['cid']) && !isset($_SESSION['user_not_expired']))
 		     	{
 				echo '<div class="alert"><h4>Expired Account</h4>Thank you for your interest in this content.  Unfortunatley
-				your account has expired. Please <a href="billing.php">update your account</a> in order to access site content.</div>';
+				your account has expired. Please <a href="'.BILLING_URL.'">update your account</a> in order to access site content.</div>';
 			    }elseif(!isset($_SESSION['uid']))
 				{
 					echo '<div class="alert">Thank you for your interest in this content. You must be logged in as a registered user

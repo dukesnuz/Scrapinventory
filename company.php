@@ -9,8 +9,12 @@ require(MYSQL);
 //$page_title ="Categories | Scrapinventory";
 //include('./views/header.inc.html');
 //include('./views/index.inc.html');
+//$_SESSION['uid'] = 1;
+//$_SESSION['cid'] = 1;
+//$_SESSION['username'] = 'username';
+//$_SESSION['user_not_expired'] = true;
 
-if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)))
+if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset($_SESSION['uid']) )
 //if(4>2)
 	{
 		$cat_id = $_GET['id'];
@@ -27,7 +31,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)))
 			{
 				$page_title = 'OOppss! Error';
 				include('./views/header.inc.html');
-				echo '<div class="alert alert-danger">OOppss! This page has been accessed in error.1</div>';
+				echo '<div class="alert alert-danger">OOppss! This page has been accessed in error.</div>';
 				include('./views/footer.inc.html');
 				exit();
 			}
@@ -41,14 +45,15 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)))
 		//echo '<h1>Companies that are '. htmlspecialchars($row['companytype']).'s</h1>';
 		//echo $row['commodity'];
 		//echo $cat_id;
-		if(isset($_SESSION['uid']) && isset($_SESSION['cid']) && !isset($_SESSION['user_not_expired']))
+			if(!isset($_SESSION['cid']))
 			{
-				echo '<div class="alert"><h4>Expired Account</h4>Thank you for your interest in this content.  Unfortunatley
-				your account has expired. Please <a href="billing.php">update your account</a> in order to access site content.</div>';
-			   }elseif(!isset($_SESSION['uid']))
+				echo '<div class="alert">Thank you for your interest in this content. You must register your company to
+							view details of companies listed on our site.</div>';
+					
+			}elseif(!isset($_SESSION['user_not_expired'] ))
 				{
-					echo '<div class="alert">Thank you for your interest in this content. Yu must be logged in as a registered user
-					to view site content.</div>';
+						echo '<div class="alert"><h4>Expired Account</h4>Thank you for your interest in this content.  Unfortunatley
+			      	your account has expired. Please <a href="'.BILLING_URL.'">update your account</a> in order to access site content.</div>';
 				}
 				
 			    $q = "SELECT b.company_id, c.company FROM companytype_company AS b
@@ -68,6 +73,12 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)))
 	}else{
 		$page_title ='OOPPss! Error!';
 		include('./views/header.inc.html');
-		echo '<div class="alert alert-danger">OOPP! This page has been accesssed in error.</div>';
+		  if(!isset($_SESSION['uid']))
+		  	   {
+			      echo '<div class="alert">Thank you for your interest in this content. You must be logged in as a registered user
+					to view site content.</div>';
+				}else{
+						echo '<div class="alert alert-danger">OOppss! This page has been accessed in error.</div>';
+				}
 	}
 include('./views/footer.inc.html');
