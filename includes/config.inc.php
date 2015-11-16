@@ -3,9 +3,9 @@
     session_start();
     // are we live
     //use below for devlopement
-     if(!defined('LIVE')) DEFINE('LIVE', false);
+     //if(!defined('LIVE')) DEFINE('LIVE', false);
 	 //use below for live
-	//if(!defined('LIVE')) DEFINE('LIVE', true);
+	 if(!defined('LIVE')) DEFINE('LIVE', true);
 	
 	//errors emailed here
 	//DEFINE('CONTACT_EMAIL', 'hello@scrapinventory.net');
@@ -20,8 +20,10 @@
 	if(LIVE === true)
 	{
 		define('BASE_URL','www.scrapinventory.net');
+		define('BILLING_URL', 'https://www.scrapinventory.net/billing.php');
 	}else{
-	define('BASE_URL', 'localhost/scrapinventory/');
+	   define('BASE_URL', 'localhost/scrapinventory/');
+	   define('BILLING_URL', 'localhost/scrapinventory/billing.php');
 	}
 
 
@@ -32,6 +34,7 @@
     define('MODWRITE', '/d/phppercolate_7/ecom-2/ch_15');
 	
 
+	
 	
 	
 	function my_error_handler($e_number, $e_message, $e_file, $e_line, $e_vars)
@@ -99,3 +102,4 @@ define('BOX_END', '</div></div></div>
 		<div class="border-bot">
 		</div></div></div></div>
 		<!--box end-->'); 
+  
