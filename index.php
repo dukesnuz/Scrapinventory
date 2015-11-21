@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] ==='POST')
 	{
 		include('./includes/login.inc.php');
 	}
-$page_title ="Home | Scrapinventory";
+$page_title ="Home | ".SITE_NAME."";
 include('./views/header.inc.html');
 include('./views/index.inc.html');
 include('./views/footer.inc.html');
