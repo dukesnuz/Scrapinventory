@@ -1,8 +1,8 @@
 <?php
     
     session_start();
-    // are we live
-    //use below for devlopement
+     // are we live
+     //use below for devlopement
      //if(!defined('LIVE')) DEFINE('LIVE', false);
 	 //use below for live
 	 if(!defined('LIVE')) DEFINE('LIVE', true);
@@ -29,13 +29,14 @@
 
      //define connection to database                   
      define('MYSQL', './include_2/mysql_connect.php');
-  
+       define('MYSQL_2', '../include_2/mysql_connect.php');
     //define url link when using MOD_WRITE
-    define('MODWRITE', '/d/phppercolate_7/ecom-2/ch_15');
+   // define('MODWRITE', '/d/phppercolate_7/ecom-2/ch_15');
 	
 
+	define('BASIC_FEE','$84.00');
 	
-	
+
 	
 	function my_error_handler($e_number, $e_message, $e_file, $e_line, $e_vars)
 	{
@@ -82,9 +83,15 @@ function redirect_invalid_user($check = 'uid', $destination ='index.php', $proto
   }
 
  
- 	//below used for stripe
+ 	//below used for stripe Below for development
 	define('STRIPE_PRIVATE_KEY','sk_test_4bd5iZmJncdWOVYOq3zTckmL');
 	define('STRIPE_PUBLIC_KEY', 'pk_test_0hWWXi7BaZ5XkpbLFNvEhgaa');
+	
+	//below for live
+	//define('STRIPE_PRIVATE_KEY','sk_live_ZnMBKYMBIUSQQUNvYD87pJxp');
+	//define('STRIPE_PUBLIC_KEY', 'pk_live_ykQ7mH70ebMMSbOJjY72nFUS');
+	
+	
 	
  //define constants for html page 210
 

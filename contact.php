@@ -8,7 +8,7 @@ include('includes/config.inc.php');
 
 require(MYSQL);
 
-$page_title ="Register User | Scrapinventory";
+$page_title ='Say Hello |  '.SITE_NAME.'';
 include('./views/header.inc.html');
 //include('./views/index.inc.html');
 
@@ -80,20 +80,20 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 					<p>We will respond back to you as fast as we can.</p></div>";
 		  
 		  
-		$body = "$fn\nThank you for contacting us.\nWe will respond back to you as fast as we can.\nTeam Scrapinventory\n".BASE_URL."\nEND Email";
+		$body = "$fn\nThank you for contacting us.\nWe will respond back to you as fast as we can.\nTeam ".SITE_NAME."\n".BASE_URL."\nEND Email";
 		
-		mail($e, 'Thank you for contacting Scrapinventory', $body, "From:".CONTACT_EMAIL);
+		mail($e, 'Thank you for contacting '.SITE_NAME, $body, "From:".CONTACT_EMAIL);
 		
 		
 		//Send email to me
-		$body = "Message came in on contact.php page, scrapinventory.\n";
+		$body = "Message came in on contact.php page, ".SITE_NAME."\n";
 		$body .="Email: $e\n";
 		$body .="First Name: $fn\n";
 		$body .="Message:\n";
 		$body .="$message\n";
 		$body .="END Email";
 		
-		mail(CONTACT_EMAIL, 'Scrapinventory Message', $body, "From:".CONTACT_EMAIL);
+		mail(CONTACT_EMAIL, SITE_NAME.' Message', $body, "From:".CONTACT_EMAIL);
 		 
 		 	
 	    

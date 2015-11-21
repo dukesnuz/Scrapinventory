@@ -6,17 +6,18 @@
 <?php
 
 echo BOX_BEGIN;
-echo '<div class="inner">
+?>
+<div class="inner">
 	<h2>Your Billing Information</h2>
 	<p>Please enter your billing information below. Then click the button to complete your order. For your security, we
-		will not store your billing information in any way.  We accept Visa, MasterCard, American Express, and Discover.</p>';
-?>
-<p>	
+		will not store your billing information in any way.  We accept Visa, MasterCard, American Express, and Discover.</p>
+	<p>The cost for our basic plan is <?php echo BASIC_FEE;?> Per year.</p>
+</div>
+    <p>	
 	 <span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=m4y8dmxHn5woyOQ0Q42PMXTeB8nbAbJM05v8qpYW0QpWeRd37ACGrulbKiVa"></script></span>
 	</p>
 	
 <?php
-
 
 	//added from page 332
 	if(isset($message)) echo "<p class=\"error\">$message</p>";
@@ -86,7 +87,7 @@ echo '<div class="inner">
   		<div align="center" id="submit_div"><input type="submit" value="Place Order" class="button" /></div>
   	</fieldset>
   	</form>
- <div>By clicking this button, your order will be completed and your credit card will be charged.</div>
+ <div>By clicking this button, your order will be completed and your credit card will be charged <?php echo BASIC_FEE;?></div>
  
 <?php echo BOX_END; ?>
 

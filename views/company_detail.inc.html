@@ -71,7 +71,38 @@ echo '</ul> ';
 ?>
            </div>
       </div>
+ </div>
+ 
+ 
+ <div class=" col-lg-6">   
+      <!--add add to favorites-->
+      	<?php
+      		if(mysqli_num_rows($fr) === 1)
+      			{
+      				echo '<h3 id="favorite_h3"><img src="./images/heart_32.png" width="32" height="32">
+      					    <span class="label label-info">This is a favorite!</span>
+      						<a id="remove_favorite_link" href="remove_from_favorites.php?pid='.$pid.'">
+      							<img src="./images/close_32.png" width="32" height="32">
+      						</a></h3>';
+      			}else{
+      				echo '<h3 id="favorite_h3"><span class="label label-info">Make this a favorite!</span>
+      						<a id= "add_favorite_link" href="add_to_favorites.php?pid='.$pid.'">
+      							<img src="./images/heart_32.png" width="32" height="32">
+      						</a></h3>';
+      			}
+      			?>
+      <!--END add to favorites-->
 </div>
 
+<div class="alert alert-info col-lg-6"><!--page and favorite counts-->
+	     <?php
+	     	echo '<p>'.$ch .'  |  '. $cu.'</p>';
+      	 ?>
+</div>
 
-
+<?php
+echo '<script type="text/javascript">
+		var pid = '.$pid.';
+	 </script>
+	 <script src="js/favorite.js"></script>';
+?>

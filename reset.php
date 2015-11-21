@@ -7,7 +7,7 @@ include('includes/config.inc.php');
 
 require(MYSQL);
 //echo 1;
-$page_title ="Reset Your Password | Scrapinventory";
+$page_title ='Reset Your Password |  '.SITE_NAME.'';
 include('./views/header.inc.html');
 //include('./views/index.inc.html');
 
@@ -44,6 +44,7 @@ if(isset($_GET['t']) && (strlen($_GET['t']) ===64))
 							//mysqli_stmt_fetch($stmt);
 						$uid = $row['user_id'];
 						//session_regenerate_id(true);
+						
 						$_SESSION['uid'] = $uid;
 			
 				//clear token form database
@@ -130,5 +131,8 @@ if(isset($_GET['t']) && (strlen($_GET['t']) ===64))
 				}else{
 					echo'<div class="alert alert-danger">'.$reset_error.'</div>';
 			}
+	           //I added this so use will need to log back in
+	           //unset($_SESSION);
+			   session_destroy();
 			include('./views/footer.inc.html');
 			?>

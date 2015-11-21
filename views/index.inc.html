@@ -6,7 +6,7 @@
 		<h1><?php echo SITE_NAME ?></h1>
 	</header>
 	<p>
-	<?php// echo SITE_NAME?> is a site that contains companies that recycle, resell and reuse commodities.
+	<?php echo SITE_NAME?> is a site that contains companies that recycle, resell and reuse commodities.
 	We have 2 types of reigistration plans. </p>
 	<ol>
 		<li>
@@ -22,10 +22,22 @@
 		    
 		<li>Company reistration: Allows you to list your company here. Also you can view companies listed along  
 			with viewing detailed information on each company. Your compnay will also be listed and details will 
-			be viewable. Cost is $84 per year.</li>
+			be viewable. Cost is <?php echo BASIC_FEE; ?> per year.</li>
 	</ol>
-</section>	
-
+<?php
+if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
+{
+			if(isset($_SESSION['user_not_expired']) )
+				{
+			 	   echo '<p class=" alert alert-success">Your account is active</p>';
+				}else{
+					echo '<p class="alert alert-danger">Your account is expired. 
+					 <a href=https://'.BASE_URL.'/billing.php>Renew</a></p>';
+				}
+}
+?>
+</section>			
+			
 <section style="margin-left:5%;margin-top:20%;text-align: center">
 	<header>
 		<h2>Recycle | Reclaim | Reuse</h2>

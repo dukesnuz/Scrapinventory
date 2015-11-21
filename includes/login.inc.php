@@ -20,7 +20,9 @@ if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
 	
 	if(empty($login_errors))
 		{
-			$q ="SELECT user_id, email, username, type, pass,company_id, IF(date_expires >= NOW(), true, false) AS expired FROM users WHERE email ='$e'";
+			//$q ="SELECT user_id, email, username, type, pass,company_id, IF(date_expires >= NOW(), true, false) AS expired FROM users WHERE email ='$e'";
+			$q ="SELECT user_id, email, username, type, pass,company_id FROM users 
+			                    WHERE email ='$e'";
 			$r = mysqli_query($dbc, $q);
 			
 			if(mysqli_num_rows($r) ===1)
@@ -33,11 +35,25 @@ if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
 							$_SESSION['username'] = $row['username'];
 							$_SESSION['type']  =$row['type'];
 							$_SESSION['cid'] = $row['company_id'];
-							$_SESSION['email'] = $row['email'];
-							if($row['expired'] === '1') 
-									{
-										$_SESSION['user_not_expired'] = true;
-									}
+							$_SESSION['email'] = $row['email']; 
+							$cid =$row['company_id'];
+							/***************Check if user expired stored in companies***********/
+								//IF(date_expires >= NOW(), true, false) AS expired 
+								$q = "SELECT IF(date_expires >= NOW(), true, false) AS expired FROM companies
+									WHERE company_id = '$cid'  ";
+									        // test cid -> 346193241
+										$r = mysqli_query($dbc, $q);
+			
+										if(mysqli_num_rows($r) === 1)
+										  {
+										   $row =mysqli_fetch_array($r, MYSQLI_ASSOC);
+							   
+										  if($row['expired'] === '1') 
+										      {
+												$_SESSION['user_not_expired'] = 'true';
+											  }
+										 }
+									 
 							}else{	
 									$login_errors['login'] = 'The email address and password do not match those on file.';
 								}

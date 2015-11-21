@@ -7,12 +7,12 @@
  require('includes/config.inc.php');
  require(MYSQL);
  /************for dev******/
-  $_SESSION['email']= "buy@ajaxloft.com";
-  $_SESSION['uid']= 1;
-  $_SESSION['cid'] = 1;
-  $_SESSION['username'] = "username";
+  //$_SESSION['email']= "buy@ajaxloft.com";
+ //$_SESSION['uid']= 1;
+ //$_SESSION['cid'] = 1;
+ //$_SESSION['username'] = "username";
  //$_SESSION['user_not_expired'] = true;
- $_SESSION['user_not_expired'] = false;
+ //$_SESSION['user_not_expired'] = false;
  //start seesion and get session ID
  //session_start();
 
@@ -26,10 +26,10 @@
 		exit();
  	}
 
-if( !isset($_SESSION['user_not_expired']))
+if(isset($_SESSION['user_not_expired']) )
 			{
 			$page_title = 'Billing | '.SITE_NAME.'';
-           include('./views/header.inc.html');	
+            include('./views/header.inc.html');	
 	        echo "<p  class='alert alert-success'>Your account is up to date</p>";
 			include('./views/footer.inc.html');
 	        exit;
@@ -45,7 +45,10 @@ if( !isset($_SESSION['user_not_expired']))
  //$_SESSION['email']  ="buy@ajaxloft.com";
  
  $order_id = 1;
- $order_total = 8400;
+ 
+ $find = array("$", ".");
+ $order_total = str_replace($find,'', BASIC_FEE);
+
  $order_id =mt_rand(1000000, 10000000);
  $email = $_SESSION['email'];
  $uid = $_SESSION['uid'];
@@ -230,7 +233,7 @@ $r = mysqli_query($dbc, "CALL add_charge('{$charge->id}', '$order_id', '$uid', '
 					     //if(!$r) echo '<h1>'.mysqli_error($dbc).'</h1>';
 						
 						/************************UPDATE User expired*********************/
-$q = "UPDATE companies SET date_expires = IF(date_expires > NOW(), ADDDATE(date_expires, INTERVAL 1 YEAR), ADDDATE(NOW(), INTERVAL 1 YEAR)), date_modified=NOW() WHERE id=$cid";
+$q = "UPDATE companies SET date_expires = IF(date_expires > NOW(), ADDDATE(date_expires, INTERVAL 1 YEAR), ADDDATE(NOW(), INTERVAL 1 YEAR)), date_modified=NOW() WHERE company_id=$cid";
 						$r = mysqli_query($dbc, $q);
 						if (mysqli_affected_rows($dbc) !== 1) 
 						{
@@ -244,13 +247,39 @@ $q = "UPDATE companies SET date_expires = IF(date_expires > NOW(), ADDDATE(date_
 						$_SESSION['otl'] = $order_total;
 						//add transaction info to session
 						$_SESSION['response_code']= $charge->paid;
+		
+						
+		/************************send emails***************************************/
+		$body =  "$_SESSION[username]\n\n";
+		$body .= "Thank you for subscribing to ".SITE_NAME."\n\n";
+		$body .= "Your credit card will be charged ".BASIC_FEE." yearly. You may cancel at anytime.\n";
+		$body .= "We hope you enjoy our website.\n";
+		$body .= "Follow us on twitter @".SITE_NAME."\n";
+		$body .= "http://twitter.com/".SITE_NAME."\n";
+		$body .= "Thank you\n";
+		$body .= "The team at \n".BASE_URL."\n";
+		$body .= "END Email";
+		
+		mail($email, ''.SITE_NAME.'Recieved Your Payment', $body, 'From:'.CONTACT_EMAIL);
+		
+		//email me
+		$body1  = "Payment recieved at ".SITE_NAME.".\n";
+		$body1 .= "User email: $email\n";
+		$body1 .= "Payment amt: ".BASIC_FEE."\n\n";
+		$body1 .= "Email to register\n$body\n\n";
+		$body1 .= "END Email";
+		
+		mail(CONTACT_EMAIL, 'Billing recieved '.SITE_NAME.'', $body1, 'From:'.CONTACT_EMAIL);
+		/****************************************END send emails********************************/
+		
+		
+		
+		
 						//redirect customer to next page
 						// $location = 'https://'.BASE_URL_2.'/'.MODWRITE.'/final.php';
 						$location = './final.php';
 						 header("Location: $location");
-						 
-						 
-					
+	
 						exit();
 					 }else{
 						//if no charge was made , alert customer
@@ -282,14 +311,14 @@ $q = "UPDATE companies SET date_expires = IF(date_expires > NOW(), ADDDATE(date_
 
 //include header
 $page_title = $page_title = 'Billing | '.SITE_NAME.'';
-include('./views/header.inc.html');
+include('./views/header_checkout.inc.html');
 //grab shopping cart contents
 //$r = mysqli_query($dbc, "CALL get_shopping_cart_contents('$uid')");
 //if(!$r) echo mysqli_error($dbc);
 
 //include view files
-if(mysqli_num_rows($r) >0)
-	{
+//if(mysqli_num_rows($r) >0)
+	//{
 		if(isset($_SESSION['shipping_for_billing']) && ($_SERVER['REQUEST_METHOD'] !=='POST'))
 			{
 				$values = 'SESSION';
@@ -300,9 +329,9 @@ if(mysqli_num_rows($r) >0)
 			 echo mt_rand(1000000, 10000000);
 			 //echo 'id'.$_SESSION['customer_id'];
 			 //echo '<br /> order'.$_SESSION['order_id'];
-	 }else{//cart empty
+	// }else{//cart empty
 	// include('./views/emptycart.html');
-	}
+	//}
 	 
 include('./views/footer.inc.html');
 ?>

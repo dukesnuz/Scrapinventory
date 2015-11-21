@@ -12,7 +12,14 @@
 				
     <div id="footer">
       <div class="container">
-        <p class="text-muted credit"><span class="pull-left"><!--<a href="site_map.php">Site Map</a> | --><a href="about.php">About</a> | <a href="privacy-policy.php">Privacy-Policies</a></span> 
+        <p class="text-muted credit"><span class="pull-left"><!--<a href="site_map.php">Site Map</a> | --><a href="about.php">About</a> | <a href="privacy-policy.php">Privacy-Policies</a>
+        		        |         <a href="https://twitter.com/scrapinventory" class="twitter-follow-button" data-show-count="false">Follow @scrapinventory</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						
+                          <a href="https://twitter.com/share" class="twitter-share-button" data-via="scrapinventory">Tweet</a>
+             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>		
+	
+        </span> 
         	
         	<span class="pull-right">Made in USA | &copy; <?php echo SITE_NAME;?> - 
             <?php
@@ -23,13 +30,31 @@
       </div>
     </div>
 
-
+	
+	        <?php
+	        /********************add page history**********************************/
+			        require('./includes/history.inc.php');
+			/*********************END get commodity for this company***************/	
+			?>
+	
 	<script src="js/bootstrap.min.js"></script>
 	
-	
-	
-	
-	
+<!--------START Chat------------>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/564f360790d1bced690df445/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+		
 		<!-- Start of StatCounter Code for Default Guide -->
 <script type="text/javascript">
 var sc_project=5668924; 

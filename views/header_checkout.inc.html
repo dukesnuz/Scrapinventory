@@ -4,15 +4,13 @@
         //$_SESSION['email'] = 'david@ajaaxtransport.com';
         //$_SESSION['cid'] = '1';
         //$_SESSION['username'] = 'Duke';
-     
         //session_destroy();
 		//echo $_SESSION['cid'];
 		//echo  $_SESSION['uid'];
 		//echo  $_SESSION['email'];
-		//$_SESSION['user_not_expired'] = true;
+		//$_SESSION['user_not_expired'] = false;
 			
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -137,7 +135,7 @@ echo '<li class="dropdown">
 		<ul class="dropdown-menu">
 			<li><a href="logout.php">Logout</a></li>
 			<li><a href="change_password.php">Change Password</a></li>';
-			if(!isset($_SESSION['user_not_expired']) )
+			if(isset($_SESSION['user_not_expired']))
 			{
 			echo '<li><a href="https://'.BASE_URL.'/billing.php">Renew</a></li>';
 			}
@@ -155,18 +153,6 @@ echo '<li class="dropdown">
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
       </div><!--/.nav-collapse -->
         </div><!--/container-->
       </div><!--/navbar-->
@@ -178,57 +164,7 @@ echo '<li class="dropdown">
 			
 			<div class="col-3">
 				
-<?php
-//moved login to top
-if(!isset($_SESSION['uid']))
-		{
-		    require('./includes/login_form.inc.php');
-		}
-?>
-				<h3 class="text-success">Commodites</h3>
-			<div class="list-group">
-<?php			
-//grab catagories
-//$_SESSION['type'] = 'seller';
-if(isset($_SESSION['type']))
-	{
-		//$type = $_SESSION['type'];
-		//$q = "SELECT * FROM commodities inner join users AS u where u.type ='$type' ORDER BY commodity ";
-		$q = "SELECT * FROM commodities  ORDER BY commodity ";
-	}else{
-		$type = Null;
-		$q = 'SELECT * FROM commodities ORDER BY commodity';
-	}
-//Chnege this to select buyers or sellers depending on type in session after user logs in
 
-		$r = mysqli_query($dbc, $q);
-			while(list($id, $commodity) = mysqli_fetch_array($r, MYSQLI_NUM))
-				{
-					//echo $type;
-					echo '<a href="commodity.php?id='.$id.'" class="list-group-item" title="'.$commodity.'">'. htmlspecialchars($commodity).'</a>';
-				}
-	
-	 echo '</div>';//list-group
-	
-	 ?>
-		<h3 class="text-success">Company Types</h3>
-		<div class="list-group">
-	<?php
-	
-	//List type companies
-	$q='SELECT * FROM company_type ORDER BY companytype';
-		$r = mysqli_query($dbc, $q);
-			 while(list($id, $companytype) = mysqli_fetch_array($r, MYSQLI_NUM))
-					{
-						echo '<a href="company.php?id='.$id.'" class="list-group-item" title="'.$companytype.'">'.htmlspecialchars($companytype).'</a>';
-					}
-				
-     echo '</div>';//list-group
-     
-        
-    //login was originally here 
-
-?>
 		</div><!--/col-3-->
 		  
 			
@@ -236,6 +172,18 @@ if(isset($_SESSION['type']))
 			<!-- CONTENT -->
 				
 				
+				
+
+				
+				
+				
+				
+				
+				
+	
+				
+				
+
 				
 
 				

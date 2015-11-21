@@ -6,7 +6,7 @@ include('includes/config.inc.php');
 redirect_invalid_user();
 require(MYSQL);
 
-$page_title ="Change Password | Scrapinventory";
+$page_title ='Change Password |  '.SITE_NAME.'';
 include('./views/header.inc.html');
 //include('./views/index.inc.html');
 

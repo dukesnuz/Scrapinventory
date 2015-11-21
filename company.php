@@ -29,7 +29,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 		//if(mysqli_num_rows($r) >1)
 		
 			{
-				$page_title = 'OOppss! Error';
+				$page_title = 'OOppss! Error | '.SITE_NAME.'';
 				include('./views/header.inc.html');
 				echo '<div class="alert alert-danger">OOppss! This page has been accessed in error.</div>';
 				include('./views/footer.inc.html');
@@ -39,7 +39,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 		//list($commodity)= mysqli_fetch_array($r, MYSQLI_NUM);
 		//$row = mysqli_fetch_array($r, MYSQLI_NUM);
 		$row = mysqli_fetch_array($r, MYSQLI_ASSOC);
-		$page_title =  $row['companytype'] .' | Scrapinventory';
+		$page_title =  $row['companytype'] .' | '.SITE_NAME.'';
 		$companytype=$row['companytype'];
 		include('./views/header.inc.html');
 		//echo '<h1>Companies that are '. htmlspecialchars($row['companytype']).'s</h1>';
@@ -47,7 +47,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 		//echo $cat_id;
 			if(!isset($_SESSION['cid']))
 			{
-				echo '<div class="alert">Thank you for your interest in this content. You must register your company to
+				        echo '<div class="alert">Thank you for your interest in this content. You must register your company to
 							view details of companies listed on our site.</div>';
 					
 			}elseif(!isset($_SESSION['user_not_expired'] ))
@@ -69,9 +69,9 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 				$r= mysqli_query($dbc, $q);
 				
 				include('./views/company.inc.html');
-		
+			
 	}else{
-		$page_title ='OOPPss! Error!';
+		$page_title ='OOPPss! Please log in | '.SITE_NAME.'';
 		include('./views/header.inc.html');
 		  if(!isset($_SESSION['uid']))
 		  	   {

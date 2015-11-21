@@ -23,7 +23,7 @@ if(!isset($_SESSION['cid']) && !isset($_SESSION['oid']))
 
 
 $page_title = 'Order Complete | '.SITE_NAME.'';
-include('./views/header.inc.html');
+include('./views/header_checkout.inc.html');
 include('./views/final.inc.html');
 //clear session
  $_SESSION = array();

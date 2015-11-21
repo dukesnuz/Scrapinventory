@@ -12,6 +12,8 @@ require(MYSQL);
 //$_SESSION['username'] = 'username';
 //$_SESSION['user_not_expired'] = true;
 
+$uid = $_SESSION['uid'];
+
 if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset($_SESSION['cid']) && isset($_SESSION['uid']))
 //if(4>2)
 	{
@@ -21,17 +23,20 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 	//phone/fax add - or ()
 	//http://forums.mysql.com/read.php?10,280544,280555
 	$q = "SELECT company,address,city,state,zip,
-	concat('(',mid(phone,1,3),') ',mid(phone,4,3),'-',mid(phone,7,4)) as phone,
-	concat('(',mid(phone,1,3),') ',mid(phone,4,3),'-',mid(phone,7,4)) as fax,
-			country,about,web_site,active FROM companies
+	        concat('(',mid(phone,1,3),') ',mid(phone,4,3),'-',mid(phone,7,4)) as phone,
+	        concat('(',mid(phone,1,3),') ',mid(phone,4,3),'-',mid(phone,7,4)) as fax,
+			country,about,web_site,active,IF(date_expires >= NOW(), true,false) as expired
+			FROM companies
 			Where
-			company_id =$id
+			company_id ='$id'
 			AND
-			active=true";
-		$r = mysqli_query($dbc, $q);
-		if(mysqli_num_rows($r) != "1")
+			active=true ";
+			
+			
+		  $r = mysqli_query($dbc, $q);
+		  if(mysqli_num_rows($r) != "1")
 			{
-				$page_title = 'OOppss! Error';
+				$page_title = 'OOppss! System Error | '.SITE_NAME.'';
 				include('./views/header.inc.html');
 				echo '<div class="alert alert-danger">OOppss! System error. We apologize for the inconvenience.</div>';
 				include('./views/footer.inc.html');
@@ -63,28 +68,81 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 						
 				
 				$rrr= mysqli_query($dbc, $qqq);
-				
-		
-			/*********************END get commodity for this company***************/	
+			
+
 			$row = mysqli_fetch_array($r, MYSQLI_ASSOC);
-			$page_title = $_GET['name'] . ' | Scrapinventory';
+			
+			/*************************grab favorites*************************/
+			$pid = $_GET['id'];
+			//$uid = 1;
+			$fq= "SELECT user_id From favorite_pages 
+					WHERE 
+					user_id= '$uid'
+					AND
+					page_id = '$pid'
+					AND 
+					active ='true'";
+			  // $fr =mysqli_query($dbc, $q);
+			     $fr = mysqli_query($dbc, $fq);
+			 // $favorites = mysqli_fetch_array($fr,MYSQLI_ASSOC);
+		/*************************END grab favorites**************************/
+		/********************************grab page views and saved count******/
+							
+	$qf = "SELECT COUNT(page_id) AS favorite_count FROM favorite_pages AS f 
+	                                    WHERE page_id = '$pid'
+	                                    AND
+	                                    active = 'true' ";
+						$ff = mysqli_query($dbc, $qf);
+						if(mysqli_num_rows($ff) === 1)
+							{
+								$rowf = mysqli_fetch_array($ff,MYSQLI_ASSOC);
+								$cu ='Saved as Favorites: '.$rowf['favorite_count'];
+							}else{
+								$cu = 0;
+							}
+							
+	$qh = "SELECT COUNT(item_id) AS history_count FROM history AS h WHERE item_id = '$pid'";
+						$fh = mysqli_query($dbc, $qh);
+						if(mysqli_num_rows($fh) === 1)
+							{
+								$rowh= mysqli_fetch_array($fh,MYSQLI_ASSOC);
+								$ch = 'Page Views: '.$rowh['history_count'];
+							}else{
+								$ch = 0;
+							}
+									
+		/******************************END page views and saved count*********/
+			$page_title = 'Details for: '.$_GET['name'] . ' | '.SITE_NAME.'';
 			include('./views/header.inc.html');
 /*************************************Check if useer subscribed*******************************************/
-    	if(isset($_SESSION['uid']) && isset($_SESSION['cid']) && !isset($_SESSION['user_not_expired']))
-		     	{
-				echo '<div class="alert"><h4>Expired Account</h4>Thank you for your interest in this content.  Unfortunatley
-				your account has expired. Please <a href="'.BILLING_URL.'">update your account</a> in order to access site content.</div>';
-			    }elseif(!isset($_SESSION['uid']))
-				{
-					echo '<div class="alert">Thank you for your interest in this content. You must be logged in as a registered user
+       //isset($_SESSION['uid']) && isset($_SESSION['cid']) && 
+    	/*if(!isset($_SESSION['uid']))
+		     {
+				   echo '<div class="alert">Thank you for your interest in this content. You must be logged in as a registered user
 					to view site content.</div>';
+					
+				}elseif(!isset($_SESSION['user_not_expired']) )
+			  */
+			  if(!isset($_SESSION['user_not_expired']) )
+				{
+					echo '<div class="alert"><h4>Expired Account</h4>Thank you for your interest in this content.  Unfortunatley
+				your account has expired. Please <a href="'.BILLING_URL.'">update your account</a> in order to access site content.</div>';
 				}else{
 /******************************END check if user subscribed************************************************/
-			        include('./views/company_detail.inc.html');
+					/******check if company is still subscribed*******/
+					if($row['expired'] ==='1' ) 
+						{
+			             include('./views/company_detail.inc.html');
+						}else{
+							echo '<div class="alert alert-info">This company\'s info is no longer avaialble on our site.</div>';
+						}
 				}
+				
+		
 			   include('./views/footer.inc.html');
+			   exit();
 	}else{
-		$page_title =' Company Detail | Scrapinventory';
+		$page_title ='OOPPss! Please log in | '.SITE_NAME.'';
 		include('./views/header.inc.html');
 		    	echo '<div class="alert">Thank you for your interest in this content. You must be logged in as a registered user
 					to view site content.</div>';
@@ -94,4 +152,3 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 	
 	
 	
-

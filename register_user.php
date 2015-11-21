@@ -8,7 +8,7 @@ include('includes/config.inc.php');
 
 require(MYSQL);
 
-$page_title ="Register User | Scrapinventory";
+$page_title ='Register User |  '.SITE_NAME.'';
 include('./views/header.inc.html');
 //include('./views/index.inc.html');
 
@@ -121,21 +121,22 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 		
 		
 		  
-		$body =  "$_SESSION[username]\n\n";
-		$body .= 'Thank you for registering at '.BASE_URL.'.\n\n';
-		$body .= "We hope you enjoy our website.\n\n";
+		$body = "$_SESSION[username]\n\n";
+		$body .= "Thank you for registering at ".SITE_NAME.".\n\n";
+		$body .="We hope you enjoy our website.\n\n";
 		$body .="If you have not also registered your company, please log in and register your company at:\n";
-		$body .='http://'.BASE_URL.'/register_company.php\n\n';
-		$body .='The team at '.BASE_URL.'\n';
-		$body .='Follow us on twitter @'.SITE_NAME.'\n';
+		$body .="http://".BASE_URL."/register_company.php\n\n";
+		$body .="Follow us on twitter @".SITE_NAME."\n";
+		$body .="http://twitter.com/".SITE_NAME."\n";
 		$body .="Thank you,\n\n";
-		$body .='http://twitter.com/'.SITE_NAME.'\n';
+		$body .="The team at ".BASE_URL."\n";
 		$body .="END Email";
 		
 		mail($e, 'User Registration Recieved at '.SITE_NAME.'', $body, 'From:'.CONTACT_EMAIL);
 		
 		//email me
-		$body1  = 'User regigistered a user on '.BASE_URL.'\n';
+		$body1 =$body;
+		$body1 .= "User regigistered a user on ".SITE_NAME."\n";
 		$body1 .= "First name: $fn\n";
 		$body1 .= "Email: $e\n\n";
 		$body1 .= "Email to register\n$body\n\n";
