@@ -118,9 +118,8 @@ if(!isset($_SESSION['uid']))
 		{
 			echo '<li><a href="register_company.php">Register Company</a></li>';
 		}else{
-				//echo "<li><a href='##'>Welcome $_SESSION[username]</a></li>";
-	   $company = str_replace(' ', '', $row['company_']);
-       echo "<li><a href='company_detail.php?id=$_SESSION[cid]'>Welcome $_SESSION[username]</a></li>";		
+				echo "<li><a href='##'>Welcome $_SESSION[username]</a></li>";
+			
 		}
 //echo '</ul>';
 
@@ -142,7 +141,7 @@ echo '<li class="dropdown">
 			{
 			echo '<li><a href="https://'.BASE_URL.'/billing.php">Renew</a></li>';
 			}
-			echo '<li><a href="favorites.php">Favorites</a></li>
+			echo '<li><a href="#">Favorites</a></li>
 			<li><a href="#">Recommendations</a></li>
 		</ul>
 	</li>';
