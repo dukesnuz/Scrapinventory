@@ -119,7 +119,7 @@ if(!isset($_SESSION['uid']))
 			echo '<li><a href="register_company.php">Register Company</a></li>';
 		}else{
 				//echo "<li><a href='##'>Welcome $_SESSION[username]</a></li>";
-	   $company = str_replace(' ', '', $row['company_']);
+	  // $company = str_replace(' ', '', $row['company_']);
        echo "<li><a href='company_detail.php?id=$_SESSION[cid]'>Welcome $_SESSION[username]</a></li>";		
 		}
 //echo '</ul>';
