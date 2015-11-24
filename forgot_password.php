@@ -18,11 +18,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 		if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
 			{
 				//escape_data($_POST['email'], $dbc)
-				$q ='SELECT user_id FROM users WHERE email = "'. mysqli_real_escape_string($dbc, $_POST['email']) .' " ';
+				$q ='SELECT user_id,company_id,username FROM users WHERE email = "'. mysqli_real_escape_string($dbc, $_POST['email']) .' " ';
 				$r= mysqli_query($dbc, $q);
 					if(mysqli_num_rows($r) === 1)
 						{
-							list($uid) = mysqli_fetch_array($r, MYSQLI_NUM);
+							list($uid,$cid,$username) = mysqli_fetch_array($r, MYSQLI_NUM);
 						}else{
 							$pass_errors['email'] = 'The submitted email address does not match those on file!';
 						}
@@ -39,10 +39,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                     $token = openssl_random_pseudo_bytes(32);
 					$token = bin2hex($token);
 					//echo '<h>222</h1>';
-					$q= 'REPLACE INTO access_tokens (user_id, token, date_expires)
-						VALUES (?,?, DATE_ADD(NOW(), INTERVAL 15 MINUTE))';
+					$q= 'REPLACE INTO access_tokens (user_id,company_id,username, token, date_expires)
+						VALUES (?,?,?,?, DATE_ADD(NOW(), INTERVAL 15 MINUTE))';
 							$stmt = mysqli_prepare($dbc, $q);
-							mysqli_stmt_bind_param($stmt, 'is', $uid, $token);
+							mysqli_stmt_bind_param($stmt, 'iiss', $uid, $cid, $username, $token);
 							mysqli_stmt_execute($stmt);
 							//echo '<h>334</h1>';
 							if(mysqli_stmt_affected_rows($stmt) ===1)
@@ -74,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 									$body1 .="Message to user: \n$body";
 									$body1 .="END Email";
 									
-									mail(CONTACT_EMAIL,'Password reset @ '.SITE_NAME, $body, 'FROM:'.CONTACT_EMAIL);
+									mail(CONTACT_EMAIL,'Password reset @ '.SITE_NAME, $body1, 'FROM:'.CONTACT_EMAIL);
 									
 									echo '<h1>Reset Your Password</h1>
 									 		<p>You will recieve an access code via email. Click the link in that email to gain access to the site.
@@ -99,7 +99,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 	
 	
 	require_once('./includes/form_functions.inc.php');
-	//echo '<h>4</h1>';
+	//echo '<h>cid.'.$cid.'</h1>';
 	?>
 	<h1>Reset Your Password</h1>
 	<p>Enter your email address below to reset your password.</p>
