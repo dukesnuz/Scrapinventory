@@ -32,7 +32,7 @@ if(isset($_GET['t']) && (strlen($_GET['t']) ===64))
  
 		if(mysqli_stmt_num_rows($stmt) ===1)
 		*/
-		$q = "SELECT user_id FROM access_tokens WHERE token ='$token' AND date_expires > NOW()";
+		$q = "SELECT user_id, company_id,username FROM access_tokens WHERE token ='$token' AND date_expires > NOW()";
 			
 			$r = mysqli_query($dbc, $q);
 			
@@ -43,10 +43,29 @@ if(isset($_GET['t']) && (strlen($_GET['t']) ===64))
 							//mysqli_stmt_bind_result($stmt, $uid);
 							//mysqli_stmt_fetch($stmt);
 						$uid = $row['user_id'];
+						$cid = $row['company_id'];
 						//session_regenerate_id(true);
 						
 						$_SESSION['uid'] = $uid;
+						$_SESSION['cid'] = $cid;
+						$_SESSION['username']=$row['username'];
+				/***************Check if user expired stored in companies***********/
+								//IF(date_expires >= NOW(), true, false) AS expired 
+								$q = "SELECT IF(date_expires >= NOW(), true, false) AS expired FROM companies
+									WHERE company_id = '$cid'  ";
+									        // test cid -> 346193241
+										$r = mysqli_query($dbc, $q);
 			
+										if(mysqli_num_rows($r) === 1)
+										  {
+										   $row =mysqli_fetch_array($r, MYSQLI_ASSOC);
+							   
+										  if($row['expired'] === '1') 
+										      {
+												$_SESSION['user_not_expired'] = 'true';
+											  }
+										 }
+				/***************Check if user expired stored in companies***********/					 
 				//clear token form database
 				$q = 'DELETE FROM access_tokens WHERE token=?';
 				$stmt = mysqli_prepare($dbc, $q);
@@ -60,7 +79,7 @@ if(isset($_GET['t']) && (strlen($_GET['t']) ===64))
 							 
 			}
 		}else{//NO token
-		$reset_error = 'This page has been accessed in error';
+		$reset_error = 'This page has been accessed in error.';
 		}
 	
  	
@@ -131,8 +150,6 @@ if(isset($_GET['t']) && (strlen($_GET['t']) ===64))
 				}else{
 					echo'<div class="alert alert-danger">'.$reset_error.'</div>';
 			}
-	           //I added this so use will need to log back in
-	           //unset($_SESSION);
-			   session_destroy();
+	          
 			include('./views/footer.inc.html');
 			?>
