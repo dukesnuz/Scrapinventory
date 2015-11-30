@@ -3,9 +3,9 @@
     session_start();
      // are we live
      //use below for devlopement
-     //if(!defined('LIVE')) DEFINE('LIVE', false);
+     if(!defined('LIVE')) DEFINE('LIVE', false);
 	 //use below for live
-	 if(!defined('LIVE')) DEFINE('LIVE', true);
+	 //if(!defined('LIVE')) DEFINE('LIVE', true);
 	
 	//errors emailed here
 	//DEFINE('CONTACT_EMAIL', 'hello@scrapinventory.net');
