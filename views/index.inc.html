@@ -5,26 +5,35 @@
 	<header>
 		<h1><?php echo SITE_NAME ?></h1>
 	</header>
+	
+	
+	
 	<p>
 	<?php echo SITE_NAME?> is a site that contains companies that recycle, resell and reuse commodities.
-	We have 2 types of reigistration plans. </p>
-	<ol>
-		<li>
-			<?php
+	 </p>
+	 
+	
+	 	<?php
 				if( !isset($_SESSION['uid'])  && !isset($_SESSION['cid']) )
 					{
-						echo '<a href="register_user.php">User registration:</a>';
-					}else{
-						echo 'User registration:';
-					}
-				?>	
-						  Allows you to view company names listed here.  Cost is Free.</li>
+	        echo '<p>We have 2 types of reigistration plans.</p>';
+			echo '<ol>
+					<li>';
+		
+						echo '<a href="register_user.php">User registration:</a>
+						    Allows you to view company names listed here.  Cost is Free.</li>';
 		    
-		<li>Company reistration: Allows you to list your company here. Also you can view companies listed along  
-			with viewing detailed information on each company. Your compnay will also be listed and details will 
-			be viewable. Cost is <?php echo BASIC_FEE; ?> per year.</li>
-	</ol>
-<?php
+					echo '<li>Registration: Allows you to list your Company/indivdual here. Also you can view 
+						        Companies/indivduals listed along with viewing detailed information on each listed. 
+						        Your company/indivdual will also be listed and details will be viewable to subscribers. 
+						        Cost is <?php echo BASIC_FEE; ?> per year.</li>';
+					}
+				
+		
+	      echo '</ol>';
+	
+	
+
 if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 {
 			if(isset($_SESSION['user_not_expired']) )
