@@ -13,19 +13,21 @@
     <div id="footer">
       <div class="container">
         <p class="text-muted credit"><span class="pull-left"><!--<a href="site_map.php">Site Map</a> | --><a href="about.php">About</a> | <a href="privacy-policy.php">Privacy-Policies</a>
-        		        |         <a href="https://twitter.com/scrapinventory" class="twitter-follow-button" data-show-count="false">Follow @scrapinventory</a>
+        	| Made in USA | &copy; <?php echo SITE_NAME;?> - 
+            <?php
+              $now= new DateTime();
+              echo $now->format('Y');
+			?>
+			| Created by <a href="http://www.dukesnuz.com">Dukesnuz</a>
+			|
+			<a href="https://twitter.com/scrapinventory" class="twitter-follow-button" data-show-count="false">Follow @scrapinventory</a>
               <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 						
                           <a href="https://twitter.com/share" class="twitter-share-button" data-via="scrapinventory">Tweet</a>
              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>		
 	
-        </span> 
+     
         	
-        	<span class="pull-right">Made in USA | &copy; <?php echo SITE_NAME;?> - 
-            <?php
-              $now= new DateTime();
-              echo $now->format('Y');
-			?>
 			</span></p>
       </div>
     </div>
