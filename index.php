@@ -14,6 +14,28 @@ if($_SERVER['REQUEST_METHOD'] ==='POST')
 	}
 $page_title ="Home | ".SITE_NAME."";
 include('./views/header.inc.html');
+
+/*******************Grab number of page views for this company to display in renew*********/
+If(isset($_SESSION['cid']))
+	{
+		 $cid = $_SESSION['cid'];
+		 
+	       $qh = "SELECT COUNT(item_id) AS history_count FROM history
+	                 WHERE item_id = '$cid'
+	                 AND
+	                 page = 'company_detail.php'
+	                 AND
+	                 company_id != '$cid'
+	                 ";
+						$fh = mysqli_query($dbc, $qh);
+						if(mysqli_num_rows($fh) === 1)
+							{
+								$rowh= mysqli_fetch_array($fh,MYSQLI_ASSOC);
+								$ch = $rowh['history_count'];
+							}else{
+								$ch = 0;
+							}
+	}						
 include('./views/index.inc.html');
 include('./views/footer.inc.html');
 
