@@ -46,7 +46,7 @@
 				  	}else{
 				  		$ip = Null;
 				  	}
- 
+
     $q= "INSERT INTO history (user_id,company_id,item_id,item_name, page_title, page,ip)
 									VALUES('$uid','$cid','$id','$in','$page_title','$p', '$ip')";
 						
@@ -58,4 +58,4 @@
 									$body .="END email";
 									mail(CONTACT_EMAIL,'Error'.SITE_NAME.'', $body, 'From:'.CONTACT_EMAIL.'');
 								}
-?>
+	
