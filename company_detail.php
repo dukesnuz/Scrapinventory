@@ -8,17 +8,20 @@ require(MYSQL);
 
 //also add if subscriber paid
 //$_SESSION['uid'] = 1;
-//$_SESSION['cid'] = 1;
+//$_SESSION['cid'] = 177913324;
 //$_SESSION['username'] = 'username';
 //$_SESSION['user_not_expired'] = true;
+//$uid = $_SESSION['uid'];
+//$_GET['name']= "Duke";
 
-$uid = $_SESSION['uid'];
+
 
 if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset($_SESSION['cid']) && isset($_SESSION['uid']))
 //if(4>2)
 	{
 		$id = $_GET['id'];
-
+        $cid = $_SESSION['cid'];
+		$uid = $_SESSION['uid'];
 	//$q = "SELECT company,address,city,state,zip,phone,fax,country,about,web_site,active FROM companies 
 	//phone/fax add - or ()
 	//http://forums.mysql.com/read.php?10,280544,280555
@@ -100,9 +103,24 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 							}else{
 								$cu = 0;
 							}
-							
-	$qh = "SELECT COUNT(item_id) AS history_count FROM history AS h WHERE item_id = '$pid'";
-						$fh = mysqli_query($dbc, $qh);
+
+					
+	$qh = "SELECT COUNT(item_id) AS history_count FROM history
+	                 WHERE item_id = '$pid'
+	                 AND
+	                 page = 'company_detail.php'
+	                 AND
+	                 company_id != '$pid'
+	                 ";
+/*
+ 		$qh = "SELECT COUNT(item_id) AS history_count FROM history
+                     WHERE item_id = '$cid'
+	                 AND
+	                 page = 'company_detail.php'
+	                 AND
+	                 company_id != '$pid'";
+*/					 
+					$fh = mysqli_query($dbc, $qh);
 						if(mysqli_num_rows($fh) === 1)
 							{
 								$rowh= mysqli_fetch_array($fh,MYSQLI_ASSOC);
@@ -126,7 +144,9 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 			  if(!isset($_SESSION['user_not_expired']) )
 				{
 					echo '<div class="alert"><h4>Expired Account</h4>Thank you for your interest in this content.  Unfortunatley
-				your account has expired. Please <a href="'.BILLING_URL.'">update your account</a> in order to access site content.</div>';
+				your account has expired. Please <a href="'.BILLING_URL.'">update your account</a> in order to access site content
+				and allow other viewers to view your company information.
+				<br />Current <strong>'.$ch.'</strong>.</div>';
 				}else{
 /******************************END check if user subscribed************************************************/
 					/******check if company is still subscribed*******/
@@ -134,7 +154,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 						{
 			             include('./views/company_detail.inc.html');
 						}else{
-							echo '<div class="alert alert-info">This company\'s info is no longer avaialble on our site.</div>';
+							echo '<div class="alert alert-info">This company\'s information is no longer avaialble on our site.</div>';
 						}
 				}
 				
