@@ -22,14 +22,14 @@
 		define('BASE_URL','www.scrapinventory.net');
 		define('BILLING_URL', 'https://www.scrapinventory.net/billing.php');
 	}else{
-	   define('BASE_URL', 'localhost/scrapinventory/');
+	   define('BASE_URL', 'localhost/scrapinventory');
 	   define('BILLING_URL', 'localhost/scrapinventory/billing.php');
 	}
 
 
      //define connection to database                   
      define('MYSQL', './include_2/mysql_connect.php');
-       define('MYSQL_2', '../include_2/mysql_connect.php');
+     define('MYSQL_2', '../include_2/mysql_connect.php');
     //define url link when using MOD_WRITE
    // define('MODWRITE', '/d/phppercolate_7/ecom-2/ch_15');
 	
