@@ -4,7 +4,7 @@
 	<h1>What is <?php echo SITE_NAME ?> About</h1>
 	
 	<p  class='alert alert-success'>
-		This site contains companies that are involved with recyling and re-using commodites.  The site
+		This site contains companies that are work recyling and re-using commodites.  The site
 		is catagorized by type of companies and by commodity each company is invloved with.
 	    
 	    To list your company simply sign up-link to user 
@@ -21,15 +21,79 @@
 		link to pay if expired
 	</p>
 	
-	<p  class='alert alert-success'>
-		Some stuff here 
+
+		<!--Some stuff here 
 		links to set up user if not logged in
-		link to pay if expired
-	</p>
+		link to pay if expired-->
+		
+		 
+		<?php
+		
+		
+		if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
+          {
+			if(isset($_SESSION['user_not_expired']) )
+				{
+			 	   echo '<p class=" alert alert-success">Your account is active</p>';
+				}else{
+					echo '<p class="alert alert-danger">Your account is expired. 
+					 <a href=https://'.BASE_URL.'/billing.php>Renew</a> your account.  <strong>'.$ch.'</strong> viewers were interested
+					  in viewing your company profile. Renew your account in order to make it visible the next time a viewer
+					  is interested in your company.';
+				}
+				
+			
+			
+           }elseif(isset($_SESSION['uid']) && empty($_SESSION['cid']) )
+               {
+     	       echo '<p class="alert alert-danger">
+			      <a href=https://'.BASE_URL.'/register_company.php>Register</a> your company.</p>';
+	       }else{
+     	        echo '<p class="alert alert-danger">Free User
+			       <a href=https://'.BASE_URL.'/register_user.php>Registration</a></p>';
+           }
+         
+         
+         
+         
+?>
 	
-	<br /><p  class='alert alert-success'>
-		Some stuff here 
-		links to set up user if not logged in
-		link to pay if expired
-	</p>
+
+	
+<section  style="margin-left:5%;margin-top:20%;text-align: center">
+	<header class='alert alert-success'>
+		<h2>Recycle | Reclaim | Reuse</h2>
+		<h3>Let's keep it Green</h3>
+	</header>
+	<ul style="float:left;list-style:none">
+		<li><img src="./images/palm_tree.jpg" alt ='Palm Tree'></li>
+		<li><img src="./images/recycling-symbol.png" alt ='Recycle Symbol'></li>
+	</ul>
+	
+   <ul style="float:left;list-style:none">
+		<li><img src="./images/bottles.jpg" alt ='Plastic Glass Bottles'></li>
+		<li><img src="./images/cans.jpg" alt ='Aluminium Cans'></li>
+		<li><img src="./images/bottles.jpg" alt ='Glass Plastic Bottles'></li>
+    </ul>
+    
+    <ul style="float:left;list-style:none">
+		<li><img src="./images/pallet_bale.jpg" alt ='Plasic Pallet Baled Clothes'></li>
+		<li><img src="./images/clothes.JPG" alt ='Used Clotes Vintage Clothing'></li>
+		<li><img src="./images/red_shoes.jpg" alt ='Used Shoes'></li>
+	   </ul>
+	   
+</section>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </div>
