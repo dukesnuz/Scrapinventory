@@ -38,10 +38,16 @@ if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 {
 			if(isset($_SESSION['user_not_expired']) )
 				{
-			 	   echo '<p class=" alert alert-success">Your account is active</p>';
+			 	   echo '<p class=" alert alert-success">Your account is active.
+			 	   	<strong>'.$ch.'</strong> viewers were interested
+					  in viewing your company profile.</p>';
 				}else{
 					echo '<p class="alert alert-danger">Your account is expired. 
-					 <a href=https://'.BASE_URL.'/billing.php>Renew</a></p>';
+					 <a href=https://'.BASE_URL.'/billing.php>Renew</a> your account.  <strong>'.$ch.'</strong> viewers were interested
+					  in viewing your company profile. Renew your account in order to make it visible the next time a viewer
+					  is interested in your company.';
+					  
+					 
 				}
 }
 ?>
@@ -69,4 +75,4 @@ if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 		<li><img src="./images/red_shoes.jpg" alt ='Used Shoes'></li>
 	   </ul>
 	   
-</sectioon>
+</section>
