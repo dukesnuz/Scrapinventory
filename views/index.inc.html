@@ -76,3 +76,41 @@ if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 	   </ul>
 	   
 </section>
+
+
+<!-- news article headlines Show 10-20 show title, link, tags-->
+
+	<section style="margin-left:5%;margin-top:75%;text-align: center">
+	<header>
+			<h2><?php echo SITE_NAME; ?> News</h2>
+	</header>
+	<?php 
+     	if(mysqli_num_rows($r) >0)
+				{
+					while($row=mysqli_fetch_array($r, MYSQLI_ASSOC))
+						{
+							
+						if($row['type'] ==="text")
+						{
+							echo '<ul style="list-style:none" class="alert alert-success">';
+							echo '<li><h3>'.$row['title'].'</h3></li>';
+							echo '<li>'.$row['description'].'</li>';
+							echo '<li><a href="http://'.$row['url'].'" target="blank">View complete article</a>';
+							echo '<li> tags:'.$row['tags'].'</li>';
+							echo '</ul>';
+						}else{
+							echo '<ul style="list-style:none" class="alert alert-success">';
+							echo '<li><h3>'.$row['title'].'</h3></li>';
+							echo '<li>'.$row['description'].'</li>';
+							echo '<li>'.$row['url'].'</li>';
+							echo '<li> tags:'.$row['tags'].'</li>';
+							echo '</ul>';
+						}
+					
+						}
+				}else{
+					$news = "No News";
+				}
+			?>
+	
+</section>

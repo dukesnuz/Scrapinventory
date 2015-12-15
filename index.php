@@ -35,7 +35,17 @@ If(isset($_SESSION['cid']))
 							}else{
 								$ch = 0;
 							}
-	}						
+	}	
+	
+/*************************Grab news feeds***********************/
+ $q = "SELECT title, description, url, tags,type FROM news 
+          WHERE status = 'true'
+          ORDER BY date_created DESC
+          LIMIT 20";
+ 
+ 			$r = mysqli_query($dbc, $q);
+
+/************************END grab news feeds********************/					
 include('./views/index.inc.html');
 include('./views/footer.inc.html');
 
