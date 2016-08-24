@@ -277,7 +277,7 @@ $q = "UPDATE companies SET date_expires = IF(date_expires > NOW(), ADDDATE(date_
 		
 						//redirect customer to next page
 						// $location = 'https://'.BASE_URL_2.'/'.MODWRITE.'/final.php';
-						$location = './final.php';
+						$location = '/final/';
 						 header("Location: $location");
 	
 						exit();
@@ -326,7 +326,7 @@ include('./views/header_checkout.inc.html');
 				$values = 'POST';
 			}
 			 include('./views/billing.inc.html');
-			 echo mt_rand(1000000, 10000000);
+			 //echo mt_rand(1000000, 10000000);
 			 //echo 'id'.$_SESSION['customer_id'];
 			 //echo '<br /> order'.$_SESSION['order_id'];
 	// }else{//cart empty

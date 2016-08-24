@@ -49,7 +49,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 								{
 									//echo '<h>line 50</h1>';
 									
-									$url = 'https://'.BASE_URL.'/reset.php?t='.$token;
+									$url = 'http://'.BASE_URL.'/reset.php?t='.$token;
 									
 									//send email
 									$email = $_POST['email'];
@@ -104,7 +104,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 	<h1>Reset Your Password</h1>
 	<p>Enter your email address below to reset your password.</p>
 	
-	<form action="forgot_password.php" method="post" accept-charset="utf-8">
+	<form action="/forgot-password/" method="post" accept-charset="utf-8">
 		<?php create_form_input('email', 'email', 'Email Address', $pass_errors);?>
 		<input type="submit" class="btn btn-default" />
 	</form>

@@ -12,7 +12,7 @@ require(MYSQL);
 //$_SESSION['username'] = 'username';
 //$_SESSION['user_not_expired'] = true;
 //$uid = $_SESSION['uid'];
-//$_GET['name']= "Duke";
+//$_GET['name']= "";
 
 
 
@@ -130,7 +130,8 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 							}
 									
 		/******************************END page views and saved count*********/
-			$page_title = 'Details for: '.$_GET['name'] . ' | '.SITE_NAME.'';
+			//$page_title = 'Details for: '.$_GET['name'] . ' | '.SITE_NAME.'';
+			$page_title = 'Details for: '.$row['company'] . ' | '.SITE_NAME.'';
 			include('./views/header.inc.html');
 /*************************************Check if useer subscribed*******************************************/
        //isset($_SESSION['uid']) && isset($_SESSION['cid']) && 

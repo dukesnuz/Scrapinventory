@@ -51,10 +51,10 @@
 									VALUES('$uid','$cid','$id','$in','$page_title','$p', '$ip')";
 						
 						     $r = mysqli_query($dbc, $q);
-							if(mysqli_affected_rows($dbc) !=11)
+							if(mysqli_affected_rows($dbc) !=1)
 								{
 									$body = "Error on SITE_NAME\n";
-									$body .="Page: $page_title Line 78 history query\n";
+									$body .="Page: $page_title Line 50 history query\n";
 									$body .="END email";
 									mail(CONTACT_EMAIL,'Error'.SITE_NAME.'', $body, 'From:'.CONTACT_EMAIL.'');
 								}
