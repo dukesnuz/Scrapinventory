@@ -1,0 +1,14 @@
+<h1>Contact Us</h1>
+<p>Please us this form to say hello and contact us.  We will respond back as fast as we can.</p>
+
+<!--create form-->
+<form action="contact.php" method="post" accept-charset="utf-8">
+<?php
+	create_form_input('first_name', 'text', 'First Name', $reg_errors);
+	create_form_input('email', 'email', 'Email Address', $reg_errors);
+	create_form_input('message', 'textarea', 'Message', $reg_errors);
+	?>
+	
+	<input type="submit" name="submit_button" value="Next &rarr;" id="submit_button" class="btn btn-default"/>
+</form>	 	
+

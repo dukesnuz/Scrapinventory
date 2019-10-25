@@ -1,0 +1,36 @@
+	
+	<h1>Company Registration</h1>
+    <p>Register your company here.</p>
+	 	
+	
+<!--create form-->
+<form action="/register-company" method="post" accept-charset="utf-8">
+<?php
+	//create_form_input('company', 'text', 'Company', $reg_errors);
+	create_form_input('company', 'text','Company', $reg_errors);
+	create_form_input('c_address', 'text', 'Company Address', $reg_errors);
+	create_form_input('c_city', 'text', 'City', $reg_errors);
+	create_form_input('c_state', 'select', 'State', $reg_errors);
+	create_form_input('c_zip', 'text', 'Zip', $reg_errors);
+	create_form_input('c_country', 'text', 'Country', $reg_errors);
+	create_form_input('c_telephone', 'text', 'Tel #', $reg_errors);
+	create_form_input('c_fax', 'text', 'Fax #', $reg_errors);
+	
+    create_form_input('c_type_company', 'select', 'Type Company', $reg_errors);
+    //create_form_input('c_type_company_other', 'text', 'Other Type Company', $reg_errors);
+     
+	create_form_input('c_commodity', 'select', 'Commodity', $reg_errors);
+    //create_form_input('c_commodity_other', 'text', 'Other Commodity', $reg_errors);
+	
+	create_form_input('c_website', 'text', 'Website', $reg_errors);
+	
+	create_form_input('c_about', 'textarea', 'About your company', $reg_errors);
+	
+	//echo '<span class="help-block">Only letters and numbers are allowed.</span>';
+	?>
+	
+	<input type="submit" name="submit_button" value="Next &rarr;" id="submit_button" class="btn btn-default"/>
+</form>	 	
+
+
+	

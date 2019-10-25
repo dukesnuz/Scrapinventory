@@ -1,0 +1,48 @@
+<IfModule mod_rewrite.c>
+Options -MultiViews
+
+RewriteEngine on
+#http://httpd.apache.org/docs/2.4/mod/mod_rewrite.html
+
+#http://httpd.apache.org/docs/2.4/mod/core.html#if
+ 
+
+RewriteRule ^home/?$  index.php
+RewriteRule ^about/?$  about.php
+RewriteRule ^contact/?$  contact.php
+RewriteRule ^logout/?$  logout.php
+RewriteRule ^favorites/?$  favorites.php
+RewriteRule ^billing/?$  billing.php
+RewriteRule ^final/?$  final.php
+RewriteRule ^reset/?$ reset.php
+
+
+
+RewriteRule ^privacy-policy/?$  privacy_policy.php
+RewriteRule ^forgot-password/?$ forgot_password.php
+RewriteRule ^change-password/?$ change_password.php
+RewriteRule ^register-user/?$  register_user.php
+RewriteRule ^register-company/?$  register_company.php
+
+
+RewriteRule ^industry-([A-Za-z\+\-]+)/([0-9]+)/?$ company.php?type=$1&id=$2  
+
+RewriteRule ^commodity-([A-Za-z\+\-]+)/([0-9]+)/?$ commodity.php?type=$1&id=$2
+
+RewriteRule ^company-([A-Za-z\+\-]+)/([0-9]+)/?$ company_detail.php?name=$1&id=$2
+
+RewriteRule ^add-to-favorites/([0-9]+)/?$ add_to_favorites.php?pid=$1
+RewriteRule ^remove-from-favorites/([0-9]+)/?$ remove_from_favorites.php?pid=$1
+
+     
+####################################################Examples#############################################
+# For the primary categories:
+#RewriteRule ^shop/(coffee|goodies)/?$ shop.php?type=$1
+
+# For sales:
+#RewriteRule ^shop/sales/?$ /sales.php
+
+# For specific products:
+#RewriteRule ^browse/(coffee|goodies)/([A-Za-z\+\-]+)/([0-9]+)/?$ browse.php?type=$1&category=$2&id=$3
+
+</IfModule>
