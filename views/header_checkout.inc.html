@@ -58,17 +58,10 @@ END bootstrap-->
 		-->
 		
          <!-- Bootstrap core CSS -->
-<<<<<<< HEAD
          <link href="/css/bootstrap.min.css" rel="stylesheet">
 
          <!-- Custom styles for this template -->
         <link href="/css/sticky-footer-navbar.css" rel="stylesheet">
-=======
-         <link href="./css/bootstrap.min.css" rel="stylesheet">
-
-         <!-- Custom styles for this template -->
-        <link href="./css/sticky-footer-navbar.css" rel="stylesheet">
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
          
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		
@@ -88,21 +81,13 @@ END bootstrap-->
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-<<<<<<< HEAD
           <a class="navbar-brand" href="/home/"><?php echo SITE_NAME;?>.net</a>
-=======
-          <a class="navbar-brand" href="index.php"><?php echo SITE_NAME;?>.net</a>
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
           <div class="nav-collapse collapse">
             <ul class="nav navbar-nav">
             	
 
 		<?php
-<<<<<<< HEAD
 			$pages = array('Home' => 'home', 'About' => 'about', 'Contact' => 'contact');
-=======
-			$pages = array('Home' => 'index.php', 'About' => 'about.php', 'Contact' => 'contact.php');
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 			$this_page = basename($_SERVER['PHP_SELF']);
 			
 			// Create each menu item:
@@ -115,11 +100,7 @@ foreach ($pages as $k => $v) {
 	if($this_page == $v) echo ' class="active"';
 
 	// Complete the item:
-<<<<<<< HEAD
 	echo '><a href="/' . $v . '/">' . $k . '</a></li>';
-=======
-	echo '><a href="' . $v . '">' . $k . '</a></li>';
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 	} //end for each loop
 
 
@@ -130,17 +111,10 @@ foreach ($pages as $k => $v) {
 		
 if(!isset($_SESSION['uid']))
 	{
-<<<<<<< HEAD
 		echo '<li><a href="/register-user/">Register User</a></li>';
 	}elseif( isset($_SESSION['uid']) && !isset($_SESSION['cid']) )
 		{
 			echo '<li><a href="/register-company/">Register Company</a></li>';
-=======
-		echo '<li><a href="register_user.php">Register User</a></li>';
-	}elseif( isset($_SESSION['uid']) && !isset($_SESSION['cid']) )
-		{
-			echo '<li><a href="register_company.php">Register Company</a></li>';
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 		}else{
 				echo "<li><a href='##'>Welcome $_SESSION[username]</a></li>";
 			
@@ -159,7 +133,6 @@ if(!isset($_SESSION['uid']))
 echo '<li class="dropdown">
 	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
 		<ul class="dropdown-menu">
-<<<<<<< HEAD
 			<li><a href="/logout/">Logout</a></li>
 			<li><a href="/change-password/">Change Password</a></li>';
 			if(isset($_SESSION['user_not_expired']))
@@ -167,15 +140,6 @@ echo '<li class="dropdown">
 			echo '<li><a href="https://'.BASE_URL.'/billing/">Renew</a></li>';
 			}
 			echo '<li><a href="/favorites/">Favorites</a></li>
-=======
-			<li><a href="logout.php">Logout</a></li>
-			<li><a href="change_password.php">Change Password</a></li>';
-			if(isset($_SESSION['user_not_expired']))
-			{
-			echo '<li><a href="https://'.BASE_URL.'/billing.php">Renew</a></li>';
-			}
-			echo '<li><a href="#">Favorites</a></li>
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 			<li><a href="#">Recommendations</a></li>
 		</ul>
 	</li>';

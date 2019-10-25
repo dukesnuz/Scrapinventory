@@ -2,10 +2,6 @@
 /**********************************This is the page format for each page.  I ma using the mvc format******************/
 /**********************This page also usee****************************************************************************/
 /***********register_company.php*************************************************************************/
-<<<<<<< HEAD
-=======
-
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 include('includes/config.inc.php');
 
 
@@ -19,11 +15,7 @@ if( !isset($_SESSION['uid']) && !isset($_SESSION['email'] ))
 {
 echo '<div><h3 class="alert-danger">OOppss! This page accsessed in error!</h3>
 		  <p class= "alert warning fade in">Have you registered as a user first?
-<<<<<<< HEAD
 		  <a href="/register-user/">Reister Here<a/>
-=======
-		  <a href="register_user.php">Reister Here<a/>
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 	
 	</div';
 //header("Location: index.php");
@@ -204,18 +196,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 		{
 					
 		//echo 1;	  
-<<<<<<< HEAD
 		//originally use minus one day  SUBDATE(NOW(), INTERVAL 1 DAY) 
 		//add 5 years 
 		//INSERT INTO companies(`date_expires`) VALUES(DATE_ADD(NOW(), INTERVAL 20 year))
 		//$sql = "INSERT INTO companies(`date_expires`) VALUES(DATE_ADD(NOW(), INTERVAL 20 year))"; //DATE_ADD(curdate,INTERVAL 10 year)
 	  $q = "INSERT INTO companies (company, address, city, state, zip, phone, fax, country,ip,web_site,about, user_id, company_id,date_expires)
 	        VALUES( '$company','$c_address','$c_city','$c_state','$c_zip','$c_telephone','$c_fax','$c_country','$ip','$c_website','$c_about','$uid','$cid', NOW() + INTERVAL 10 year)";
-=======
-			
-	  $q = "INSERT INTO companies (company, address, city, state, zip, phone, fax, country,ip,web_site,about, user_id, company_id,date_expires)
-	        VALUES( '$company','$c_address','$c_city','$c_state','$c_zip','$c_telephone','$c_fax','$c_country','$ip','$c_website','$c_about','$uid','$cid', SUBDATE(NOW(), INTERVAL 1 DAY) )";
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 					  
 		$r = mysqli_query($dbc, $q);
 			
@@ -245,16 +231,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 							<p>Thank you for registering.</p>
 							<P>We hope you enjoy our website.</p>';
 			echo  "<p>Welcome committee sent an email to: $email.</p></div>";
-<<<<<<< HEAD
 		
 			
 		//$body = "".$_SESSION[username]."\n\n";
 		$body = "$company\n\r";
-=======
-			
-			
-		$body =  "".$_SESSION[username]."\n\n";
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 		$body .= "Thank you for registering your company at ".SITE_NAME.".\n\n";
 		$body .= "We hope you enjoy our website.\n\n";
 		$body .="Follow us on twitter @".SITE_NAME."\n";
@@ -272,11 +252,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 		$body1 .="Email to register\n$body\n\n";
 		$body1 .="END Email";
 		
-<<<<<<< HEAD
 		mail(CONTACT_EMAIL_2, 'Registered Co. on '.SITE_NAME.'', $body1, 'From:'.CONTACT_EMAIL);
-=======
-		mail(CONTACT_EMAIL, 'Registered Co. on '.SITE_NAME.'', $body1, 'From:'.CONTACT_EMAIL);
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 	
 		 
 		 

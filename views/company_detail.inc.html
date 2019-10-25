@@ -79,7 +79,6 @@ echo '</ul> ';
       	<?php
       		if(mysqli_num_rows($fr) === 1)
       			{
-<<<<<<< HEAD
       				echo '<h3 id="favorite_h3"><img src="/images/heart_32.png" width="32" height="32">
       					    <span class="label label-info">This is a favorite!</span>
       						<a id="remove_favorite_link" href="/remove-from-favorites/'.$pid.'">
@@ -94,20 +93,6 @@ echo '</ul> ';
       			?>
       			<!--<a id="remove_favorite_link" href="remove_from_favorites.php?pid='.$pid.'">-->
       			<!--<a id= "add_favorite_link" href="add_to_favorites.php?pid='.$pid.'">-->
-=======
-      				echo '<h3 id="favorite_h3"><img src="./images/heart_32.png" width="32" height="32">
-      					    <span class="label label-info">This is a favorite!</span>
-      						<a id="remove_favorite_link" href="remove_from_favorites.php?pid='.$pid.'">
-      							<img src="./images/close_32.png" width="32" height="32">
-      						</a></h3>';
-      			}else{
-      				echo '<h3 id="favorite_h3"><span class="label label-info">Make this a favorite!</span>
-      						<a id= "add_favorite_link" href="add_to_favorites.php?pid='.$pid.'">
-      							<img src="./images/heart_32.png" width="32" height="32">
-      						</a></h3>';
-      			}
-      			?>
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
       <!--END add to favorites-->
 </div>
 
@@ -121,9 +106,5 @@ echo '</ul> ';
 echo '<script type="text/javascript">
 		var pid = '.$pid.';
 	 </script>
-<<<<<<< HEAD
 	 <script src="/js/favorite.js"></script>';
-=======
-	 <script src="js/favorite.js"></script>';
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 ?>

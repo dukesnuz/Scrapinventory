@@ -51,12 +51,9 @@ if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
 										  if($row['expired'] === '1') 
 										      {
 												$_SESSION['user_not_expired'] = 'true';
-<<<<<<< HEAD
 											  } else {
 											  	// set accounts to never expired on login
 											  	$_SESSION['user_not_expired'] = 'true';
-=======
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 											  }
 										 }
 									 

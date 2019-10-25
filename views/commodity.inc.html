@@ -11,19 +11,12 @@ echo	'<div class="container">';
 						while($row = mysqli_fetch_array($r, MYSQLI_ASSOC))
 							{
 	echo '<div class="list-group">';			
-<<<<<<< HEAD
 			                 //echo "<a><a href='company_detail.php?id=$row[company_id]&name=$company' class='list-group-item'>$company</a>";
 			                 $company = $row['company'];
 			                 $company_l=strtolower($company);
 			                 $company_l = str_replace(' ', '-', $company_l);
 			                 echo "<a><a href='/company-$company_l/$row[company_id]/' class='list-group-item'>$company</a>";
                               
-=======
-							$company = str_replace(' ', '', $row['company']);
-
-			                 echo "<a><a href='company_detail.php?id=$row[company_id]&name=$company' class='list-group-item'>$company</a>";
-                         
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 
 echo 	'</div>';							
 						   }//END while loop	

@@ -47,31 +47,18 @@ If(isset($_SESSION['cid']))
 
 /************************END grab news feeds********************/					
 include('./views/index.inc.html');
-<<<<<<< HEAD
 
 
-=======
-include('./views/footer.inc.html');
-
-/*
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 if(!isset($ip))
 	{
 		$ip = 0;
 	}
-<<<<<<< HEAD
 /*
-=======
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 $body = "Visitor on:".SITE_NAME."\n";
 $body .= "This email on index.php page\n";
 $body .= "Line 23\n";
 $body .= "Ip:".$ip."\n";
 $body .= "END email";
 mail(CONTACT_EMAIL_2,'Visitor on:'.SITE_NAME,$body, 'From:'.CONTACT_EMAIL);
-<<<<<<< HEAD
 */
 include('./views/footer.inc.html');
-=======
-*/
->>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
