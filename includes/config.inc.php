@@ -1,4 +1,8 @@
 <?php
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
     session_start();
      // are we live
      //use below for devlopement
@@ -8,7 +12,11 @@
 	
 	//errors emailed here
 	//DEFINE('CONTACT_EMAIL', 'hello@scrapinventory.net');
+<<<<<<< HEAD
 	DEFINE('CONTACT_EMAIL', 'scrapinventory@ajaxtransport.com');
+=======
+	DEFINE('CONTACT_EMAIL', 'hello@scrapinventory.net');
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 	DEFINE('CONTACT_EMAIL_2', 'david@ajaxtransport.com');
 	DEFINE('SITE_NAME' , 'Scrapinventory');
 	
@@ -18,8 +26,13 @@
 	//check if live 
 	if(LIVE === true)
 	{
+<<<<<<< HEAD
 		define('BASE_URL','scrapinventory.ajax.company');
 		define('BILLING_URL', 'https://scrapinventory.ajax.company/billing/');
+=======
+		define('BASE_URL','www.scrapinventory.net');
+		define('BILLING_URL', 'https://www.scrapinventory.net/billing/');
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 	}else{
 	   define('BASE_URL', 'localhost/scrapinventory');
 	   define('BILLING_URL', 'localhost/scrapinventory/billing/');
@@ -55,7 +68,11 @@
 			}else{
 				//developement print error
 				//send error in an email
+<<<<<<< HEAD
 				error_log ($message, 1, CONTACT_EMAIL_2, CONTACT_EMAIL);
+=======
+				error_log ($message, 1, CONTACT_EMAIL, CONTACT_EMAIL);
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 				
 				//only print error in browser, if error isnt a notice
 				if($e_number != E_NOTICE)

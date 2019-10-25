@@ -11,6 +11,7 @@
 	<p>
 	<?php echo SITE_NAME?> is a site that contains companies that recycle, resell and reuse commodities.
 	 </p>
+<<<<<<< HEAD
 
 	 	<?php
 				if( !isset($_SESSION['uid'])  && !isset($_SESSION['cid']) )
@@ -19,6 +20,30 @@
 	      	     can view other companies listed here. Your company details will be viewable to all other subscribers. Search
 	      	     by Commodites or Company Type. Save other companies to you favorites.</p>";
 				}
+=======
+	 
+	
+	 	<?php
+				if( !isset($_SESSION['uid'])  && !isset($_SESSION['cid']) )
+					{
+	        echo '<p>We have 2 types of reigistration plans.</p>';
+			echo '<ol>
+					<li>';
+		
+						echo '<a href="register_user.php">User registration:</a>
+						    Allows you to view company names listed here.  Cost is Free.</li>';
+		    
+					echo '<li>Registration: Allows you to list your Company/indivdual here. Also you can view 
+						        Companies/indivduals listed along with viewing detailed information on each listed. 
+						        Your company/indivdual will also be listed and details will be viewable to subscribers. 
+						        Cost is <?php echo BASIC_FEE; ?> per year.</li>';
+					}
+				
+		
+	      echo '</ol>';
+	
+	
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 
 if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 {
@@ -29,7 +54,11 @@ if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 					  in viewing your company profile.</p>';
 				}else{
 					echo '<p class="alert alert-danger">Your account is expired. 
+<<<<<<< HEAD
 					 <a href=https://'.BASE_URL.'/billing/>Renew</a> your account.  <strong>'.$ch.'</strong> viewers were interested
+=======
+					 <a href=https://'.BASE_URL.'/billing.php>Renew</a> your account.  <strong>'.$ch.'</strong> viewers were interested
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 					  in viewing your company profile. Renew your account in order to make it visible the next time a viewer
 					  is interested in your company.';
 					  
@@ -45,6 +74,7 @@ if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 		<h3>Let's keep it Green</h3>
 	</header>
 	<ul style="float:left;list-style:none">
+<<<<<<< HEAD
 		<li><img src="/images/palm_tree.jpg" alt ='Palm Tree'></li>
 		<li><img src="/images/recycling-symbol.png" alt ='Recycle Symbol'></li>
 	</ul>
@@ -59,6 +89,22 @@ if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 		<li><img src="/images/pallet_bale.jpg" alt ='Plasic Pallet Baled Clothes'></li>
 		<li><img src="/images/clothes.JPG" alt ='Used Clotes Vintage Clothing'></li>
 		<li><img src="/images/red_shoes.jpg" alt ='Used Shoes'></li>
+=======
+		<li><img src="./images/palm_tree.jpg" alt ='Palm Tree'></li>
+		<li><img src="./images/recycling-symbol.png" alt ='Recycle Symbol'></li>
+	</ul>
+	
+   <ul style="float:left;list-style:none">
+		<li><img src="./images/bottles.jpg" alt ='Plastic Glass Bottles'></li>
+		<li><img src="./images/cans.jpg" alt ='Aluminium Cans'></li>
+		<li><img src="./images/bottles.jpg" alt ='Glass Plastic Bottles'></li>
+    </ul>
+    
+    <ul style="float:left;list-style:none">
+		<li><img src="./images/pallet_bale.jpg" alt ='Plasic Pallet Baled Clothes'></li>
+		<li><img src="./images/clothes.JPG" alt ='Used Clotes Vintage Clothing'></li>
+		<li><img src="./images/red_shoes.jpg" alt ='Used Shoes'></li>
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 	   </ul>
 	   
 </section>
@@ -99,6 +145,7 @@ if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 				}
 			?>
 	
+<<<<<<< HEAD
 </section>
 
 <!--twitter feed start-->
@@ -108,3 +155,6 @@ if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
           
 </section>
 <!--twitter feed end-->
+=======
+</section>
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a

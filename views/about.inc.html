@@ -37,7 +37,11 @@
 			 	   echo '<p class=" alert alert-success">Your account is active</p>';
 				}else{
 					echo '<p class="alert alert-danger">Your account is expired. 
+<<<<<<< HEAD
 					 <a href=https://'.BASE_URL.'/billing/>Renew</a> your account.  <strong>'.$ch.'</strong> viewers were interested
+=======
+					 <a href=https://'.BASE_URL.'/billing.php>Renew</a> your account.  <strong>'.$ch.'</strong> viewers were interested
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 					  in viewing your company profile. Renew your account in order to make it visible the next time a viewer
 					  is interested in your company.';
 				}
@@ -47,10 +51,17 @@
            }elseif(isset($_SESSION['uid']) && empty($_SESSION['cid']) )
                {
      	       echo '<p class="alert alert-danger">
+<<<<<<< HEAD
 			      <a href=/register-company/>Register</a> your company.</p>';
 	       }else{
      	        echo '<p class="alert alert-danger">Free User
 			       <a href=/register-user/>Registration</a></p>';
+=======
+			      <a href=https://'.BASE_URL.'/register_company.php>Register</a> your company.</p>';
+	       }else{
+     	        echo '<p class="alert alert-danger">Free User
+			       <a href=https://'.BASE_URL.'/register_user.php>Registration</a></p>';
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
            }
          
          
@@ -71,6 +82,7 @@
 	</ul>
 	
    <ul style="float:left;list-style:none">
+<<<<<<< HEAD
 		<li><img src="/images/bottles.jpg" alt ='Plastic Glass Bottles'></li>
 		<li><img src="/images/cans.jpg" alt ='Aluminium Cans'></li>
 		<li><img src="/images/bottles.jpg" alt ='Glass Plastic Bottles'></li>
@@ -80,6 +92,17 @@
 		<li><img src="/images/pallet_bale.jpg" alt ='Plasic Pallet Baled Clothes'></li>
 		<li><img src="/images/clothes.JPG" alt ='Used Clotes Vintage Clothing'></li>
 		<li><img src="/images/red_shoes.jpg" alt ='Used Shoes'></li>
+=======
+		<li><img src="./images/bottles.jpg" alt ='Plastic Glass Bottles'></li>
+		<li><img src="./images/cans.jpg" alt ='Aluminium Cans'></li>
+		<li><img src="./images/bottles.jpg" alt ='Glass Plastic Bottles'></li>
+    </ul>
+    
+    <ul style="float:left;list-style:none">
+		<li><img src="./images/pallet_bale.jpg" alt ='Plasic Pallet Baled Clothes'></li>
+		<li><img src="./images/clothes.JPG" alt ='Used Clotes Vintage Clothing'></li>
+		<li><img src="./images/red_shoes.jpg" alt ='Used Shoes'></li>
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 	   </ul>
 	   
 </section>

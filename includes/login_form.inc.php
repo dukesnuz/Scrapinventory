@@ -8,7 +8,11 @@ if(!isset($login_errors))
 	require('./includes/form_functions.inc.php');
 ?>
 
+<<<<<<< HEAD
 <form action ="/home/" method="post" accept-charset="UTF-8">
+=======
+<form action ="index.php" method="post" accept-charset="UTF-8">
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 	<fieldset>
 		<legend>Login</legend>
 		<?php
@@ -26,4 +30,8 @@ if(!isset($login_errors))
 
 
 <!--I added below line-->
+<<<<<<< HEAD
 <p><a href="/forgot-password/">Forgot Password</a></p>
+=======
+<p><a href="forgot_password.php">Forgot Password</a></p>
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a

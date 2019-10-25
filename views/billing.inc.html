@@ -22,7 +22,11 @@ echo BOX_BEGIN;
 	//added from page 332
 	if(isset($message)) echo "<p class=\"error\">$message</p>";
 
+<<<<<<< HEAD
     echo '<form action="/billing/" method="POST" id="billing_form">';
+=======
+    echo '<form action="./billing.php" method="POST" id="billing_form">';
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
     	
 	echo '<span class="error" id="error_span"></span>';
     	
@@ -105,4 +109,8 @@ echo '<script type="text/javascript">
 	Stripe.setPublishableKey("'.STRIPE_PUBLIC_KEY.'");
 </script>';
 ?>
+<<<<<<< HEAD
 <script type="text/javascript" src="/js/billing.js"></script>
+=======
+<script type="text/javascript" src="js/billing.js"></script>
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a

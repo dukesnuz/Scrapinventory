@@ -12,10 +12,18 @@ $page_title ='Register User |  '.SITE_NAME.'';
 include('./views/header.inc.html');
 //include('./views/index.inc.html');
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 $reg_errors = array();
 
 //This is throwing errors so I used mysqli_real_escape_string
 //$fn= escape_data($_POST['first_name'], $dbc);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 	  	
 //check for form submission
 if($_SERVER['REQUEST_METHOD'] === 'POST')
@@ -92,11 +100,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 			$uid = substr(mt_rand(100,1000).time(),3,9);
 			$ip = $_SERVER['REMOTE_ADDR'];
 			
+<<<<<<< HEAD
 				//set sessions for user
 			//$_SESSION['cid'] = $cid;
 			$_SESSION['uid'] = $uid;
 			$_SESSION['email'] = $e;
 			$_SESSION['username'] = $u;
+=======
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 			
 	  $q = "INSERT INTO users (username, email, pass, first_name, last_name, user_id, company_id,ip)
 	        VALUES( '$u', '$e', '".password_hash($p, PASSWORD_BCRYPT)."', '$fn', '$ln','$uid','$cid','$ip')";
@@ -106,14 +117,27 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 		//query created one row, thnak new customer and send an email
 		if(mysqli_affected_rows($dbc) === 1)
 		{
+<<<<<<< HEAD
 			//set user expire to true
 			$_SESSION['user_not_expired'] = 'true';
+=======
+			
+			//set sessions for user
+			//$_SESSION['cid'] = $cid;
+			$_SESSION['uid'] = $uid;
+			$_SESSION['email'] = $e;
+			$_SESSION['username'] = $u;
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 			
 			echo '<div class="alert alert-success"><h3>Thank you for registering!</h3></div>
 			
 		
 		  <div class= "alert warning fade in"><h4>Now register your company
+<<<<<<< HEAD
 		                              <a href="/register-company/">Here<a/></h4></div>';
+=======
+		                              <a href="register_company.php">Here<a/></h4></div>';
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 		  
 		  //I added below line
 		   echo "<div class='alert alert-success'><p>Welcome committee sent an email to: $e.</p></div>";
@@ -141,7 +165,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 		$body1 .= "Email to register\n$body\n\n";
 		$body1 .= "END Email";
 		
+<<<<<<< HEAD
 		mail(CONTACT_EMAIL_2, 'User Registered on '.SITE_NAME.'', $body1, 'From:'.CONTACT_EMAIL);
+=======
+		mail(CONTACT_EMAIL, 'User Registered on '.SITE_NAME.'', $body1, 'From:'.CONTACT_EMAIL);
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 		
 		     
 		include('./views/footer.inc.html');

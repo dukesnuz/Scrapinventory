@@ -56,6 +56,10 @@
 									$body = "Error on SITE_NAME\n";
 									$body .="Page: $page_title Line 50 history query\n";
 									$body .="END email";
+<<<<<<< HEAD
 									mail(CONTACT_EMAIL_2,'Error'.SITE_NAME.'', $body, 'From:'.CONTACT_EMAIL.'');
+=======
+									mail(CONTACT_EMAIL,'Error'.SITE_NAME.'', $body, 'From:'.CONTACT_EMAIL.'');
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 								}
 	

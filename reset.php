@@ -137,7 +137,11 @@ if(isset($_GET['t']) && (strlen($_GET['t']) ===64))
 				
 				<p>Use the form below to change your password.</p>
 				
+<<<<<<< HEAD
 				<form action = "/reset/" method="post" accept-charset="utf-8">
+=======
+				<form action = "reset.php" method="post" accept-charset="utf-8">
+>>>>>>> 10ab8b6629f9210eae104f200e890fe17b30716a
 					<?php	
 					create_form_input('pass1', 'password','Password', $pass_errors);
 					echo '<span class="help-block">Must be at least 6 characters long, with at 
