@@ -93,6 +93,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $r = mysqli_query($dbc, $q);
 
             //query created one row, thnak new customer and send an email
+            echo mysqli_affected_rows($dbc);
+            echo $r;
             if (mysqli_affected_rows($dbc) === 1) {
                 //set user expire to true
                 $_SESSION['user_not_expired'] = 'true';
