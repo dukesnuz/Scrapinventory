@@ -2,9 +2,9 @@
     session_start();
      // are we live
      //use below for devlopement
-     //if (!defined('LIVE')) {
-      //   DEFINE('LIVE', false);
-     //}
+    /* if (!defined('LIVE')) {
+         DEFINE('LIVE', false);
+     }*/
      //use below for live
      if (!defined('LIVE')) {
          DEFINE('LIVE', true);
