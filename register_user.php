@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // echo 77;
         if ($rows === 0) {
             //if(4>6)
-                  //no records returned
+            //no records returned
             //add user to databse
             //set company_id  and user_id in user
             //$cid = substr(time().mt_rand(1,100000),6, 9);
@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $body .="The team at ".BASE_URL."\n";
                 $body .="END Email";
 
-                mail($e, 'User Registration Recieved at '.SITE_NAME.'', $body, 'From:'.CONTACT_EMAIL);
+                //mail($e, 'User Registration Recieved at '.SITE_NAME.'', $body, 'From:'.CONTACT_EMAIL);
 
                 //email me
                 $body1 =$body;
@@ -129,8 +129,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $body1 .= "Email to register\n$body\n\n";
                 $body1 .= "END Email";
 
-                mail(CONTACT_EMAIL_2, 'User Registered on '.SITE_NAME.'', $body1, 'From:'.CONTACT_EMAIL);
-        
+                //mail(CONTACT_EMAIL_2, 'User Registered on '.SITE_NAME.'', $body1, 'From:'.CONTACT_EMAIL);
+
                 include('./views/footer.inc.html');
                 exit();
 
