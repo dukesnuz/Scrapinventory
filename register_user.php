@@ -87,14 +87,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['email'] = $e;
             $_SESSION['username'] = $u;
 
-            $q = "INSERT INTO users (username, email, pass, first_name, last_name, user_id, company_id,ip)
-	        VALUES( '$u', '$e', '".password_hash($p, PASSWORD_BCRYPT)."', '$fn', '$ln','$uid','$cid','$ip')";
+            $q = "INSERT INTO users (username, email, pass, first_name, last_name, user_id, company_id,ip, date_expires)
+	        VALUES( '$u', '$e', '".password_hash($p, PASSWORD_BCRYPT)."', '$fn', '$ln','$uid','$cid','$ip', NOW() + INTERVAL 10 year)";
 
             $r = mysqli_query($dbc, $q);
 
             //query created one row, thnak new customer and send an email
-            echo mysqli_affected_rows($dbc);
-            echo $r;
             if (mysqli_affected_rows($dbc) === 1) {
                 //set user expire to true
                 $_SESSION['user_not_expired'] = 'true';
@@ -121,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $body .="The team at ".BASE_URL."\n";
                 $body .="END Email";
 
-                //mail($e, 'User Registration Recieved at '.SITE_NAME.'', $body, 'From:'.CONTACT_EMAIL);
+                mail($e, 'User Registration Recieved at '.SITE_NAME.'', $body, 'From:'.CONTACT_EMAIL);
 
                 //email me
                 $body1 =$body;
@@ -131,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $body1 .= "Email to register\n$body\n\n";
                 $body1 .= "END Email";
 
-                //mail(CONTACT_EMAIL_2, 'User Registered on '.SITE_NAME.'', $body1, 'From:'.CONTACT_EMAIL);
+                mail(CONTACT_EMAIL_2, 'User Registered on '.SITE_NAME.'', $body1, 'From:'.CONTACT_EMAIL);
 
                 include('./views/footer.inc.html');
                 exit();
