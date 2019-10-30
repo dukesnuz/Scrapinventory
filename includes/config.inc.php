@@ -12,7 +12,7 @@
 
     //errors emailed here
     //DEFINE('CONTACT_EMAIL', 'hello@scrapinventory.net');
-    DEFINE('CONTACT_EMAIL', 'scrapinventory@ajaxtransport.com');
+    DEFINE('CONTACT_EMAIL', 'scrapinventory@ajax.company');
     DEFINE('CONTACT_EMAIL_2', 'david@ajaxtransport.com');
     DEFINE('SITE_NAME', 'Scrapinventory');
 
