@@ -12,8 +12,8 @@
 
     //errors emailed here
     //DEFINE('CONTACT_EMAIL', 'hello@scrapinventory.net');
-    DEFINE('CONTACT_EMAIL', 'scrapinventory@ajax.company');
-    DEFINE('CONTACT_EMAIL_2', 'david@ajaxtransport.com');
+    DEFINE('CONTACT_EMAIL', 'hello@dukesnuz.com');
+    DEFINE('CONTACT_EMAIL_2', 'david@davidpetringa.com');
     DEFINE('SITE_NAME', 'Scrapinventory');
 
     //determine location of files and the URL of the site:
@@ -21,8 +21,8 @@
 
     //check if live
     if (LIVE === true) {
-        define('BASE_URL', 'scrapinventory.ajax.company');
-        define('BILLING_URL', 'https://scrapinventory.ajax.company/billing/');
+        define('BASE_URL', 'scrapinventory.dukesnuz.com');
+        define('BILLING_URL', 'https://scrapinventory.dukesnuz.com/billing/');
     } else {
         define('BASE_URL', 'localhost/scrapinventory');
         define('BILLING_URL', 'localhost/scrapinventory/billing/');
