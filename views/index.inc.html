@@ -5,17 +5,17 @@
 	<header>
 		<h1><?php echo SITE_NAME ?></h1>
 	</header>
-	
-	
-	
+
+
+
 	<p>
 	<?php echo SITE_NAME?> is a site that contains companies that recycle, resell and reuse commodities.
 	 </p>
 
 	 	<?php
 				if( !isset($_SESSION['uid'])  && !isset($_SESSION['cid']) )
-					{	    
-	      echo "<p><a href='/register-user/'>Registration</a> is ".BASIC_FEE.". Once you register you 
+					{
+	      echo "<p><a href='/register-user/'>Registration</a> is ".BASIC_FEE.". Once you register you
 	      	     can view other companies listed here. Your company details will be viewable to all other subscribers. Search
 	      	     by Commodites or Company Type. Save other companies to you favorites.</p>";
 				}
@@ -28,17 +28,17 @@ if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 			 	   	<strong>'.$ch.'</strong> viewers were interested
 					  in viewing your company profile.</p>';
 				}else{
-					echo '<p class="alert alert-danger">Your account is expired. 
+					echo '<p class="alert alert-danger">Your account is expired.
 					 <a href=https://'.BASE_URL.'/billing/>Renew</a> your account.  <strong>'.$ch.'</strong> viewers were interested
 					  in viewing your company profile. Renew your account in order to make it visible the next time a viewer
 					  is interested in your company.';
-					  
-					 
+
+
 				}
 }
 ?>
-</section>			
-			
+</section>
+
 <section style="margin-left:5%;margin-top:20%;text-align: center">
 	<header>
 		<h2>Recycle | Reclaim | Reuse</h2>
@@ -48,34 +48,41 @@ if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 		<li><img src="/images/palm_tree.jpg" alt ='Palm Tree'></li>
 		<li><img src="/images/recycling-symbol.png" alt ='Recycle Symbol'></li>
 	</ul>
-	
+
    <ul style="float:left;list-style:none">
 		<li><img src="/images/bottles.jpg" alt ='Plastic Glass Bottles'></li>
 		<li><img src="/images/cans.jpg" alt ='Aluminium Cans'></li>
 		<li><img src="/images/bottles.jpg" alt ='Glass Plastic Bottles'></li>
     </ul>
-    
+
     <ul style="float:left;list-style:none">
 		<li><img src="/images/pallet_bale.jpg" alt ='Plasic Pallet Baled Clothes'></li>
 		<li><img src="/images/clothes.JPG" alt ='Used Clotes Vintage Clothing'></li>
 		<li><img src="/images/red_shoes.jpg" alt ='Used Shoes'></li>
 	   </ul>
-	   
+
 </section>
 
-
+<!-- items on ebay-->
+<section style="margin-left:5%;margin-top:20%;text-align: center">
+	<header>
+		<h2>Stuff For Sale</h2>
+	</header>
+	<script type="text/javascript" src="//www.auctionnudge.com/feed/item/js/theme/responsive/page/init/img_size/120/cats_output/dropdown/search_box/1/show_logo/1/lang/english/SellerID/ajaxmarket/siteid/0/MaxEntries/6"></script>
+	<div id="auction-nudge-items" class="auction-nudge"></div>
+	</section>
 <!-- news article headlines Show 10-20 show title, link, tags-->
 
-	<section style="margin-left:5%;margin-top:75%;text-align: center">
+	<section style="margin-left:5%;margin-top:5%;text-align: center">
 	<header>
-			<h2><?php echo SITE_NAME; ?> News</h2>
+			<h2><?php echo SITE_NAME; ?> News Feed</h2>
 	</header>
-	<?php 
+	<?php
      	if(mysqli_num_rows($r) >0)
 				{
 					while($row=mysqli_fetch_array($r, MYSQLI_ASSOC))
 						{
-							
+
 						if($row['type'] ==="text")
 						{
 							echo '<ul style="list-style:none" class="alert alert-success">';
@@ -92,19 +99,19 @@ if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 							echo '<li> tags:'.$row['tags'].'</li>';
 							echo '</ul>';
 						}
-					
+
 						}
 				}else{
 					$news = "No News";
 				}
 			?>
-	
+
 </section>
 
 <!--twitter feed start-->
 <section style="margin-left:5%;margin-top:10%;text-align: center">
 	            <a class="twitter-timeline"  href="https://twitter.com/scrapinventory" data-widget-id="676808781200683008">Tweets by @scrapinventory</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-          
+
 </section>
 <!--twitter feed end-->

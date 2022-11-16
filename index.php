@@ -38,7 +38,7 @@ if (isset($_SESSION['cid'])) {
  $q = "SELECT title, description, url, tags,type FROM news
           WHERE status = 'true'
           ORDER BY date_created DESC
-          LIMIT 20";
+          LIMIT 5";
 
             $r = mysqli_query($dbc, $q);
 
