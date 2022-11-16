@@ -59,21 +59,21 @@ if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 		<li><img src="/images/pallet_bale.jpg" alt ='Plasic Pallet Baled Clothes'></li>
 		<li><img src="/images/clothes.JPG" alt ='Used Clotes Vintage Clothing'></li>
 		<li><img src="/images/red_shoes.jpg" alt ='Used Shoes'></li>
-	   </ul>
+ </ul>
 
 </section>
 
 <!-- items on ebay-->
-<section style="margin-left:5%;margin-top:20%;text-align: center">
+<section style="float:left;margin-left:5%;margin-top:20%;text-align: center">
 	<header>
 		<h2>Stuff For Sale</h2>
 	</header>
 	<script type="text/javascript" src="//www.auctionnudge.com/feed/item/js/theme/responsive/page/init/img_size/120/cats_output/dropdown/search_box/1/show_logo/1/lang/english/SellerID/ajaxmarket/siteid/0/MaxEntries/6"></script>
 	<div id="auction-nudge-items" class="auction-nudge"></div>
-	</section>
+</section>
 <!-- news article headlines Show 10-20 show title, link, tags-->
 
-	<section style="margin-left:5%;margin-top:5%;text-align: center">
+	<section style="float:left;margin-left:5%;margin-top:5%;text-align: center">
 	<header>
 			<h2><?php echo SITE_NAME; ?> News Feed</h2>
 	</header>
@@ -109,9 +109,11 @@ if( isset($_SESSION['uid'])  && isset($_SESSION['cid']) )
 </section>
 
 <!--twitter feed start-->
-<section style="margin-left:5%;margin-top:10%;text-align: center">
+<section style="float:left;margin-left:5%;margin-top:5%;text-align: center">
 	            <a class="twitter-timeline"  href="https://twitter.com/scrapinventory" data-widget-id="676808781200683008">Tweets by @scrapinventory</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 </section>
 <!--twitter feed end-->
+
+<div style="clear: both"></div>
