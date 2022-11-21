@@ -217,7 +217,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $body .="The team at ".BASE_URL."\n";
                 $body .="END Email";
 
-                mail($email, 'Company Registration Recieved at '.SITE_NAME.'', $body, 'From:'.CONTACT_EMAIL);
+                //mail($email, 'Company Registration Recieved at '.SITE_NAME.'', $body, 'From:'.CONTACT_EMAIL);
 
                 //email me
                 $body1  ="Company regigistered a company on ".SITE_NAME.".\n";
@@ -226,7 +226,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $body1 .="Email to register\n$body\n\n";
                 $body1 .="END Email";
 
-                mail(CONTACT_EMAIL_2, 'Registered Co. on '.SITE_NAME.'', $body1, 'From:'.CONTACT_EMAIL);
+                //mail(CONTACT_EMAIL_2, 'Registered Co. on '.SITE_NAME.'', $body1, 'From:'.CONTACT_EMAIL);
 
 
 
