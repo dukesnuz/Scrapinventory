@@ -155,8 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           'body'    => '<span style="color: red">Scrapinventory Registered</span><br> '.$body. '',
           'altBody' => $altBody
         );
-print_r($data);
-die();
+
         sendMail($data);
 
         //email me
