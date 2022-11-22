@@ -160,6 +160,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 							print_r($row);
 							echo $_GET['id'];
 							echo $row['company'] ;
+					             //$row['company']
 							echo $row['city'] ;
 							echo $row['date_expires'];
 							echo $row['expired'] ;
