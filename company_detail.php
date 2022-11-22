@@ -143,6 +143,13 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 					
 				}elseif(!isset($_SESSION['user_not_expired']) )
 			  */
+			  echo $_GET['id'];
+							echo $row['company'] ;
+					             //$row['company']
+							echo $row['city'] ;
+							echo $row['date_expires'];
+							echo $row['expired'] ;
+							/////////////////////////////////////////
 			  if(!isset($_SESSION['user_not_expired']) )
 				{
 					echo '<div class="alert"><h4>Expired Account</h4>Thank you for your interest in this content.  Unfortunatley
