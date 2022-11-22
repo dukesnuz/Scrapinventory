@@ -75,7 +75,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 			$body1 .="Email: $email\n";
 			$body1 .="Message to user: \n$body";
 			$body1 .="END Email";
-			*/.
+			*/
 
 			//mail(CONTACT_EMAIL,'Password reset @ '.SITE_NAME, $body1, 'FROM:'.CONTACT_EMAIL);
 			/***********************************use phpmailer and mailgun********************************************/
