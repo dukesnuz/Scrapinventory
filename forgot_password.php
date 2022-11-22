@@ -97,7 +97,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 				'fromFirstName' => SITE_NAME,
 				'isHTML' => true,
 				'toEmail' => $email,
-				'toFirstName' => $_SESSION['username'],
+				'toFirstName' => "",//$_SESSION['username'],
 				'subject' => 'Reset Password On'.SITE_NAME.'',
 				'body'    => '<span style="color: red">Scrapinventory Registered</span><br> '.$body. '',
 				'altBody' => $altBody
