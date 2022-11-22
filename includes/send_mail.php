@@ -3,9 +3,7 @@
 *****function to take arguments and then send an email using mailgun and phh mailer****************
 ***************************************************************************************************/
 function sendMail($data){
-  print_r($data);
   require_once ('../vendor/autoload.php');
-  echo 3;
   $mail = new PHPMailer;
   $mail->isSMTP();
   $mail->Host = MAILGUN_HOST;
