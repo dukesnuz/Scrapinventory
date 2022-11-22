@@ -4,21 +4,24 @@
 	<h1>What is <?php echo SITE_NAME ?> About</h1>
 	
 	<p  class='alert alert-success'>
-		This site contains companies that are work recyling and re-using commodites.  The site
+		This site contains companies that are work at recyling and re-using commodites.  The site
 		is catagorized by type of companies and by commodity each company is invloved with.
 	    
 	    To list your company simply sign up-link to user 
-	    Then register your company.  Along with you subscription you will also be able to view details for any other
-	    company listed on this site.  
+	    Then register your company.  Once you sign up you will also be able to view details for any other
+	    companies listed on this site.  
 	    
 	    
-	    We have a nominal fee for signing up.  The fee is <?php echo BASIC_FEE;?> per year.
-	    If after one year you do not want to renew, simply do not.
-	    
-		
-		Some stuff here 
-		links to set up user if not logged in
-		link to pay if expired
+	    The site fee is <?php echo BASIC_FEE;?> per year.
+	   
+		<?php
+				if( !isset($_SESSION['uid'])  && !isset($_SESSION['cid']) )
+					{
+	      echo "<p><a href='/register-user/'>Registration</a> is ".BASIC_FEE.". Once you register you
+	      	     can view other companies listed here. Your company details will be viewable to all other subscribers. Search
+	      	     by Commodites or Company Type. Save other companies to you favorites.</p>";
+				}
+				?>
 	</p>
 	
 
