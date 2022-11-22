@@ -74,7 +74,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 				$rrr= mysqli_query($dbc, $qqq);
 			
 
-				//$row = mysqli_fetch_array($r, MYSQLI_ASSOC);
+				$row = mysqli_fetch_array($r, MYSQLI_ASSOC);
 			
 			/*************************grab favorites*************************/
 			$pid = $_GET['id'];
