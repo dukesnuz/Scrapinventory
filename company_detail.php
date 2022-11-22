@@ -25,11 +25,11 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 	//$q = "SELECT company,address,city,state,zip,phone,fax,country,about,web_site,active FROM companies 
 	//phone/fax add - or ()
 	//http://forums.mysql.com/read.php?10,280544,280555
-	//country,about,web_site,active,IF(date_expires >= NOW(), true,false) as expired
+	
 	$q = "SELECT company,address,city,state,zip,
 	        concat('(',mid(phone,1,3),') ',mid(phone,4,3),'-',mid(phone,7,4)) as phone,
 	        concat('(',mid(phone,1,3),') ',mid(phone,4,3),'-',mid(phone,7,4)) as fax,
-			country,about,web_site,active,IF(date_expires >= NOW(), 1, 0) as expired
+			country,about,web_site,active,IF(date_expires >= NOW(), true,false) as expired
 			FROM companies
 			Where
 			company_id ='$id'
@@ -152,7 +152,8 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 				}else{
 /******************************END check if user subscribed************************************************/
 					/******check if company is still subscribed*******/
-					if($row['expired'] ==='1' ) 
+					if($row['expired']) 
+					//if($row['expired'] ==='1' ) 
 						{
 			             include('./views/company_detail.inc.html');
 						}else{
