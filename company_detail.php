@@ -155,6 +155,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 					/******check if company is still subscribed*******/
 					 if($r['expired'] ==='1' ) 
 						{
+						$row = $rowc;
 			             include('./views/company_detail.inc.html');
 						}else{
 							echo 1111;
