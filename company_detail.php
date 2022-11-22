@@ -26,7 +26,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 	//phone/fax add - or ()
 	//http://forums.mysql.com/read.php?10,280544,280555
 	
-	$q = "SELECT company,address,city,state,zip,
+	$q = "SELECT company,address,city,state,zip, date_expires,
 	        concat('(',mid(phone,1,3),') ',mid(phone,4,3),'-',mid(phone,7,4)) as phone,
 	        concat('(',mid(phone,1,3),') ',mid(phone,4,3),'-',mid(phone,7,4)) as fax,
 			country,about,web_site,active,IF(date_expires >= NOW(), true,false) as expired
@@ -158,7 +158,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 						}else{
 							echo $row['date_expires'];
 							echo $row['expired'] ;
-						
+							echo $row['companies'] ;
 							echo '<div class="alert alert-info">This company\'s information is no longer avaialble on our site.</div>';
 						}
 				}
