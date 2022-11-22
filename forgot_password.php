@@ -9,7 +9,7 @@ require(MYSQL);
 $page_title ='Forgot Password |  '.SITE_NAME.'';
 include('./views/header.inc.html');
 //include('./views/index.inc.html');
-include('../includes/send_mail.php');
+include('./includes/send_mail.php');
 
 //echo '<h>1</h1>';
 $pass_errors = array();
@@ -75,7 +75,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 			$body1 .="Email: $email\n";
 			$body1 .="Message to user: \n$body";
 			$body1 .="END Email";
-			*/
+			*/.
 
 			//mail(CONTACT_EMAIL,'Password reset @ '.SITE_NAME, $body1, 'FROM:'.CONTACT_EMAIL);
 			/***********************************use phpmailer and mailgun********************************************/
@@ -97,7 +97,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 				'fromFirstName' => SITE_NAME,
 				'isHTML' => true,
 				'toEmail' => $email,
-				'toFirstName' => $_SESSION[username],
+				'toFirstName' => $_SESSION['username'],
 				'subject' => 'Reset Password On'.SITE_NAME.'',
 				'body'    => '<span style="color: red">Scrapinventory Registered</span><br> '.$body. '',
 				'altBody' => $altBody

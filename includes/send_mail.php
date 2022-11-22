@@ -4,7 +4,7 @@
 ***************************************************************************************************/
 function sendMail($data){
   //print_r($data);
-  require_once ('../vendor/autoload.php');
+  require_once ('./vendor/autoload.php');
   $mail = new PHPMailer;
   $mail->isSMTP();
   $mail->Host = MAILGUN_HOST;

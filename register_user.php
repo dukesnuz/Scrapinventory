@@ -150,7 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           'fromFirstName' => SITE_NAME,
           'isHTML' => true,
           'toEmail' => $e,
-          'toFirstName' => "",//$_SESSION['username'],
+          'toFirstName' => $_SESSION['username'],
           'subject' => 'User Registration Recieved at '.SITE_NAME.'',
           'body'    => '<span style="color: red">Scrapinventory Registered</span><br> '.$body. '',
           'altBody' => $altBody
