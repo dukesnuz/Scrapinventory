@@ -156,6 +156,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 						{
 			             include('./views/company_detail.inc.html');
 						}else{
+							echo 1111;
 							echo $row['date_expires'];
 							echo $row['expired'] ;
 							echo $row['companies'] ;
