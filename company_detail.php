@@ -152,12 +152,11 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 				}else{
 /******************************END check if user subscribed************************************************/
 					/******check if company is still subscribed*******/
-					echo $row['expired'] ;
 					 if($row['expired'] ==='1' ) 
 						{
 			             include('./views/company_detail.inc.html');
 						}else{
-							echo '<div class="alert alert-info">This company\'s information is no longer avaialble on our site.</div>';
+							echo '<div class="alert alert-info">This company\'s information is no longer avaialble on our site...</div>';
 						}
 				}
 				
