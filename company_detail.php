@@ -153,22 +153,8 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 				}else{
 /******************************END check if user subscribed************************************************/
 					/******check if company is still subscribed*******/
-					 if($r['expired'] ==='1' ) 
+					 if($rowc['expired'] ==='1' ) 
 						{
-							echo 00000;
-							print_r($rowc);
-							echo $_GET['id'];
-							echo $rowc['company'] ;
-					             //$row['company']
-							echo $rowc['city'] ;
-							echo $rowc['date_expires'];
-							echo $rowc['expired'] ;print_r($rowc);
-							echo $_GET['id'];
-							echo $rowc['company'] ;
-					             //$row['company']
-							echo $rowc['city'] ;
-							echo $rowc['date_expires'];
-							echo $rowc['expired'] ;
 						$row = $rowc;
 			             include('./views/company_detail.inc.html');
 						}else{
