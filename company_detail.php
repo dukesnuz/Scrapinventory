@@ -38,7 +38,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 			
 			
 		  $row = mysqli_query($dbc, $q);
-		  //$r = mysqli_query($dbc, $q);
+		  $r = mysqli_query($dbc, $q);
 		  if(mysqli_num_rows($r) != "1")
 			{
 				$page_title = 'OOppss! System Error | '.SITE_NAME.'';
