@@ -11,7 +11,7 @@ require(MYSQL);
 $page_title ='Register User |  '.SITE_NAME.'';
 include('./views/header.inc.html');
 //include('./views/index.inc.html');
-include('../includes/send_mail.php');
+include('./includes/send_mail.php');
 
 $reg_errors = array();
 
@@ -150,7 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           'fromFirstName' => SITE_NAME,
           'isHTML' => true,
           'toEmail' => $e,
-          'toFirstName' => $_SESSION[username],
+          'toFirstName' => $_SESSION['username'],
           'subject' => 'User Registration Recieved at '.SITE_NAME.'',
           'body'    => '<span style="color: red">Scrapinventory Registered</span><br> '.$body. '',
           'altBody' => $altBody
@@ -161,7 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //email me
         $body1 =$body;
         $body1 .= "User regigistered a user on ".SITE_NAME."\n";
-        $body1 .= "First name:". $_SESSION[username]."\n";
+        $body1 .= "First name:". $_SESSION['username']."\n";
         $body1 .= "Email: $e\n\n";
         $body1 .= "Email to register\n$body\n\n";
         $body1 .= "END Email";
