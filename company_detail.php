@@ -156,7 +156,8 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 						{
 			             include('./views/company_detail.inc.html');
 						}else{
-							echo '<div class="alert alert-info">This company\'s information is no longer avaialble on our site...</div>';
+							echo $row['expired'] ;
+							echo '<div class="alert alert-info">This company\'s information is no longer avaialble on our site.</div>';
 						}
 				}
 				
