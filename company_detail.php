@@ -74,7 +74,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 				$rrr= mysqli_query($dbc, $qqq);
 			
 
-				$row = mysqli_fetch_array($r, MYSQLI_ASSOC);
+				$rowc = mysqli_fetch_array($r, MYSQLI_ASSOC);
 			
 			/*************************grab favorites*************************/
 			$pid = $_GET['id'];
@@ -132,7 +132,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 									
 		/******************************END page views and saved count*********/
 			//$page_title = 'Details for: '.$_GET['name'] . ' | '.SITE_NAME.'';
-			$page_title = 'Details for: '.$r['company'] . ' | '.SITE_NAME.'';
+			$page_title = 'Details for: '.$rowc['company'] . ' | '.SITE_NAME.'';
 			include('./views/header.inc.html');
 /*************************************Check if useer subscribed*******************************************/
        //isset($_SESSION['uid']) && isset($_SESSION['cid']) && 
@@ -158,13 +158,13 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 			             include('./views/company_detail.inc.html');
 						}else{
 							echo 1111;
-							print_r($r);
+							print_r($rowc);
 							echo $_GET['id'];
-							echo $r['company'] ;
+							echo $rowc['company'] ;
 					             //$row['company']
-							echo $rr['city'] ;
-							echo $r['date_expires'];
-							echo $r['expired'] ;
+							echo $rowc['city'] ;
+							echo $rowc['date_expires'];
+							echo $rowc['expired'] ;
 						
 							echo '<div class="alert alert-info">This company\'s information is no longer avaialble on our site.</div>';
 						}
