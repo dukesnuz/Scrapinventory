@@ -37,7 +37,6 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 			active=true ";
 			
 			
-		  $row = mysqli_query($dbc, $q);
 		  $r = mysqli_query($dbc, $q);
 		  if(mysqli_num_rows($r) != "1")
 			{
@@ -75,7 +74,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 				$rrr= mysqli_query($dbc, $qqq);
 			
 
-				//$row = mysqli_fetch_array($r, MYSQLI_ASSOC);
+				$row = mysqli_fetch_array($r, MYSQLI_ASSOC);
 			
 			/*************************grab favorites*************************/
 			$pid = $_GET['id'];
@@ -158,6 +157,7 @@ if(filter_var($_GET['id'], FILTER_VALIDATE_INT, array('min_range' =>1)) && isset
 			             include('./views/company_detail.inc.html');
 						}else{
 							echo 1111;
+							print_r($row);
 							echo $_GET['id'];
 							echo $row['companies'] ;
 							echo $row['date_expires'];
